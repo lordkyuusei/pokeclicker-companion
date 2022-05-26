@@ -36,7 +36,9 @@
                 "js/hatchery/autohatchScript.js",
                 "js/hatchery/undohatchScript.js",
                 "js/dungeon/autodungeonScript.js",
-                "js/dungeon/undodungeonScript.js"
+                "js/dungeon/undodungeonScript.js",
+                "js/battleFrontier/autobattlefrontierScript.js",
+                "js/battleFrontier/undobattlefrontierScript.js"
             ],
             "matches": [
                 "<all_urls>"

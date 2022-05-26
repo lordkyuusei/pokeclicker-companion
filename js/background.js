@@ -1,5 +1,4 @@
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("Pokéclicker Installed");
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
         chrome.declarativeContent.onPageChanged.addRules([
@@ -12,12 +11,10 @@ chrome.runtime.onInstalled.addListener(() => {
                 actions: [new chrome.declarativeContent.ShowPageAction()]
             }
         ]);
-        console.log("Added Page Action")
     });
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    console.log(tabId, changeInfo, tab)
     if (changeInfo.status === 'complete') {
         chrome.scripting.executeScript({
             target: { tabId: tabId },

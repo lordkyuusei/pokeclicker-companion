@@ -7,6 +7,8 @@ const autohatchUrl = 'js/hatchery/autohatchScript.js';
 const undohatchUrl = 'js/hatchery/undohatchScript.js';
 const autodungeonUrl = 'js/dungeon/autodungeonScript.js';
 const undodungeonUrl = 'js/dungeon/undodungeonScript.js';
+const autoBattleFrontierUrl = 'js/battleFrontier/autobattlefrontierScript.js';
+const undoBattleFrontierUrl = 'js/battleFrontier/undoBattlefrontierScript.js';
 
 const autohatchId = 'autohatchScript';
 const autoclickId = 'autoclickerScript';
@@ -14,6 +16,8 @@ const undoclickId = 'undoclickerScript';
 const undohatchId = 'undohatchScript';
 const autodungeonId = 'autodungeonScript';
 const undodungeonId = 'undodungeonScript';
+const autoBattleFrontierId = 'autobattlefrontierScript';
+const undoBattleFrontierId = 'undobattlefrontierScript';
 
 /**
  * Utility injection & ejection scripts.
@@ -35,6 +39,17 @@ const injectScript = (fileName, id) => {
     return { status: "ok", response: id };
 }
 
+
+/**
+ * Toggling Battle Frontier Reset.
+ */
+
+const toggleBattleFrontierOff = () => {
+    ejectScript(autoBattleFrontierId);
+    injectScript(autoBattleFrontierUrl, autoBattleFrontierId);
+    return ejectScript(autoBattleFrontierId);
+}
+const toggleBattleFrontierOn = () => injectScript(autoBattleFrontierUrl, autoBattleFrontierId);
 
 /**
  * Toggling Dungeon Runner. Set to Autoclicker Speed.
@@ -73,6 +88,8 @@ const mapMessageToFunction = {
     'toggle-optimized-hatchery-off': toggleOptimizedHatcheryOff,
     'toggle-dungeon-runner-on': toggleDungeonRunnerOn,
     'toggle-dungeon-runner-off': toggleDungeonRunnerOff,
+    'toggle-battlefrontier-on': toggleBattleFrontierOn,
+    'toggle-battlefrontier-off': toggleBattleFrontierOff,
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
