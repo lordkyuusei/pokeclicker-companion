@@ -1,0 +1,27 @@
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: "Cascadia Code", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    width: 20rem;
+    height: 5rem;
+}
+
+.toggles {
+    display: grid;
+    grid-template: auto / 2fr 1fr;
+    place-items: center;
+}
+
+header,
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    margin: 1rem;
+}

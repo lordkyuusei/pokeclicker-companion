@@ -1,0 +1,1 @@
+const autoclickInterval = setInterval(() => Battle.clickAttack(), 100);

@@ -1,0 +1,2 @@
+ads.isRunning = false;
+ads = {}
