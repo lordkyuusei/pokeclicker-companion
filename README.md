@@ -7,6 +7,8 @@ Une extension chrome / edge / équivalent qui permet d'automatiser quelques él�
 
 ➡️ Autodungeon - Permet de compléter automatiquement les donjons. Algo simple en escargot, rien de très poussé, mais suffit pour farmer. (il faut d'abord aller sur l'écran du donjon)
 
+➡️ Autobattlefrontier - Permet de relancer automatiquement la zone de combat quand elle est terminée, simple, pratique, vous pouvez AFK les yeux fermés.
+
 # installation
 Flemme de payer de l'argent à google ou microsoft pour avoir le droit de poster le truc donc
 - cloner le repo
