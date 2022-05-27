@@ -23,7 +23,7 @@ et au pire vous la retirez j'suis sûrement pas lae seul.e à avoir fait un truc
 
 # installation
 Flemme de payer de l'argent à google ou microsoft pour avoir le droit de poster le truc donc
-- cloner le repo
+- cloner le repo (le gros bouton vert 'code' en haut de page => cloner ou via zip si vous êtes pas du milieu)
 - aller dans votre barre d'adresse, tapez chrome://extensions ou edge://extensions ou équivalent, activer le mode développeur et cliquer sur "Charger l'extension" ou équivalent
 - cliquer sur le dossier de ce projet
 - ???
