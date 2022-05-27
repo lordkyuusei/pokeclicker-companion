@@ -38,7 +38,8 @@
                 "js/dungeon/autodungeonScript.js",
                 "js/dungeon/undodungeonScript.js",
                 "js/battleFrontier/autobattlefrontierScript.js",
-                "js/battleFrontier/undobattlefrontierScript.js"
+                "js/battleFrontier/undobattlefrontierScript.js",
+                "js/toggleMainScript.js"
             ],
             "matches": [
                 "<all_urls>"

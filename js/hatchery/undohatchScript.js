@@ -1,1 +1,2 @@
-clearInterval(autohatchInterval);
+clearInterval(intervalMap.get('autohatchInterval'));
+intervalMap.delete('autohatchInterval');

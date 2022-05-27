@@ -1,1 +1,2 @@
-clearInterval(autoclickInterval);
+clearInterval(intervalMap.get('autoclickInterval'));
+intervalMap.delete('autoclickInterval');

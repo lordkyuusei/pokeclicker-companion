@@ -1,2 +1,1 @@
-ads.isRunning = false;
-ads = {}
+intervalMap.delete('autodungeonScript');

@@ -1,6 +1,7 @@
 /**
  * Constants
  */
+const mainScriptUrl = 'js/toggleMainScript.js';
 const autoclickUrl = 'js/autoclicker/autoclickerScript.js';
 const undoclickUrl = 'js/autoclicker/undoclickerScript.js';
 const autohatchUrl = 'js/hatchery/autohatchScript.js';
@@ -10,6 +11,7 @@ const undodungeonUrl = 'js/dungeon/undodungeonScript.js';
 const autoBattleFrontierUrl = 'js/battleFrontier/autobattlefrontierScript.js';
 const undoBattleFrontierUrl = 'js/battleFrontier/undoBattlefrontierScript.js';
 
+const mainScriptId = 'toggleMainId';
 const autohatchId = 'autohatchScript';
 const autoclickId = 'autoclickerScript';
 const undoclickId = 'undoclickerScript';
@@ -25,20 +27,36 @@ const undoBattleFrontierId = 'undobattlefrontierScript';
 const ejectScript = (id) => {
     const script = document.getElementById(id);
     if (script) script.remove();
-    return { status: "ok", response: id };
+    return { status: `${id} unloaded`, response: id };
 }
 
 const injectScript = (fileName, id) => {
-    if (document.getElementById(id)) return { status: "ok", response: id };
+    if (document.getElementById(id)) return { status: `${id} already loaded`, response: id };
 
     const script = document.createElement('script');
     const file = chrome.runtime.getURL(fileName);
     script.id = id;
     script.src = file;
     document.body.appendChild(script);
-    return { status: "ok", response: id };
+    return { status: `${id} loaded`, response: id };
 }
 
+/**
+ * Check if scripts have already been loaded & update accordingly.
+ */
+const getTogglesStates = () => {
+    const autoclicker = document.getElementById(autoclickId);
+    const autohatch = document.getElementById(autohatchId);
+    const dungeon = document.getElementById(autodungeonId);
+    const battleFrontier = document.getElementById(autoBattleFrontierId);
+
+    return {
+        autoclicker: autoclicker !== null,
+        autohatch: autohatch !== null,
+        dungeon: dungeon !== null,
+        battleFrontier: battleFrontier !== null,
+    };
+}
 
 /**
  * Toggling Battle Frontier Reset.
@@ -80,6 +98,11 @@ const toggleAutoclickerOff = () => {
 };
 const toggleAutoclickerOn = () => injectScript(autoclickUrl, autoclickId);
 
+/**
+ * Toggle main script with interval map.
+ */
+const toggleMainOff = () => console.log('off');
+const toggleMainOn = () => injectScript(mainScriptUrl, mainScriptId);
 
 const mapMessageToFunction = {
     'toggle-autoclicker-on': toggleAutoclickerOn,
@@ -90,6 +113,9 @@ const mapMessageToFunction = {
     'toggle-dungeon-runner-off': toggleDungeonRunnerOff,
     'toggle-battlefrontier-on': toggleBattleFrontierOn,
     'toggle-battlefrontier-off': toggleBattleFrontierOff,
+    'toggle-main-on': toggleMainOn,
+    'toggle-main-off': toggleMainOff,
+    'update-toggles': getTogglesStates,
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

@@ -3,13 +3,19 @@ const toggleHatchery = document.getElementById('toggle-hatchery');
 const toggleDungeon = document.getElementById('toggle-dungeon');
 const toggleBattleFrontier = document.getElementById('toggle-battlefrontier');
 
-chrome.action.onClicked.addListener(() => {
-    document.getElementsByTagName('body')[0].style.background = 'red';
-    toggleAutoclicker.checked = document.getElementById('autoclickerScript') !== null;
-    toggleHatchery.checked = document.getElementById('autohatchScript') !== null;
-    toggleDungeon.checked = document.getElementById('autodungeonScript') !== null;
-    toggleBattleFrontier.checked = document.getElementById('autobattlefrontierScript') !== null;
-});
+const updateToggles = () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+            message: 'update-toggles'
+        }, (response) => {
+            const { autoclicker, hatchery, dungeon, battlefrontier } = response;
+            toggleAutoclicker.checked = autoclicker;
+            toggleHatchery.checked = hatchery;
+            toggleDungeon.checked = dungeon;
+            toggleBattleFrontier.checked = battlefrontier;
+        });
+    });
+}
 
 const toggle = (checked, idOn, idOff) => {
     if (checked) {
@@ -37,3 +43,6 @@ toggleAutoclicker.onchange = (event) => toggle(event.target.checked, 'toggle-aut
 toggleDungeon.onchange = (event) => toggle(event.target.checked, 'toggle-dungeon-runner-on', 'toggle-dungeon-runner-off');
 toggleHatchery.onchange = (event) => toggle(event.target.checked, 'toggle-optimized-hatchery-on', 'toggle-optimized-hatchery-off');
 toggleBattleFrontier.onchange = (event) => toggle(event.target.checked, 'toggle-battlefrontier-on', 'toggle-battlefrontier-off');
+
+toggle(true, 'toggle-main-on', 'toggle-main-off');
+updateToggles();

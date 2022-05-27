@@ -1,1 +1,2 @@
-clearInterval(battleFrontierInterval);
+clearInterval(intervalMap.get(autobattlefrontierInterval));
+intervalMap.delete('autobattlefrontierInterval');
