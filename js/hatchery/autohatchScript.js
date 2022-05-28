@@ -1,6 +1,6 @@
 intervalMap.set('autohatchOption', document.currentScript.getAttribute('hatcherySortOption'));
 intervalMap.set('autohatchInterval', setInterval(() => {
-    if (App.game.breeding.hasFreeQueueSlot() || App.game.breeding.hasFreeEggSlot()) {
+    if (App.game.breeding.hasFreeEggSlot()) {
         var allPokemon = [...App.game.party.caughtPokemon];
         const sortOption = intervalMap.get('autohatchOption');
         if (sortOption !== Settings.getSetting('hatcherySort').value) {
