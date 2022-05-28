@@ -1,6 +1,7 @@
 {
     "name": "Pokeclicker Companion",
-    "description": "A companion app for the Pokeclicker game.",
+    "short_description": "A companion app for the Pokeclicker game.",
+    "description": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
     "author": "Kyuu",
     "version": "1.0.0",
     "manifest_version": 3,
