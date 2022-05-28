@@ -11,7 +11,7 @@ body {
 
 .toggles {
     display: grid;
-    grid-template: auto / 2fr 1fr;
+    grid-template: auto / 2fr 1fr 1fr;
     place-items: center;
 }
 
@@ -24,4 +24,8 @@ footer {
 
 main {
     margin: 1rem;
+}
+
+label::before {
+    content: '➡️'
 }

@@ -30,13 +30,18 @@ const ejectScript = (id) => {
     return { status: `${id} unloaded`, response: id };
 }
 
-const injectScript = (fileName, id) => {
+const injectScript = (fileName, id, params) => {
     if (document.getElementById(id)) return { status: `${id} already loaded`, response: id };
 
     const script = document.createElement('script');
     const file = chrome.runtime.getURL(fileName);
     script.id = id;
     script.src = file;
+
+    params?.forEach(param => {
+        script.setAttribute(param.name, param.value);
+    });
+
     document.body.appendChild(script);
     return { status: `${id} loaded`, response: id };
 }
@@ -86,7 +91,8 @@ const toggleOptimizedHatcheryOff = () => {
     injectScript(undohatchUrl, undohatchId);
     return ejectScript(undohatchId);
 }
-const toggleOptimizedHatcheryOn = () => injectScript(autohatchUrl, autohatchId);
+
+const toggleOptimizedHatcheryOn = (params) => injectScript(autohatchUrl, autohatchId, params);
 
 /**
  * Toggling Autoclicker. Set to 100ms to match speedrun's allowed tools.
@@ -119,9 +125,9 @@ const mapMessageToFunction = {
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    const { message } = request;
+    const { message, params } = request;
     const func = mapMessageToFunction[message];
     if (func) {
-        sendResponse(func());
+        sendResponse(func(params));
     }
 });
