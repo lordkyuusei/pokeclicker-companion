@@ -15,7 +15,7 @@ intervalMap.set('autohatchInterval', setInterval(() => {
     } else {
         App.game.breeding.eggList.forEach((eggFunc, i) => {
             const egg = eggFunc();
-            if (egg.progress() > 100) {
+            if (egg.progress() >= 100) {
                 App.game.breeding.hatchPokemonEgg(i);
             }
         })
