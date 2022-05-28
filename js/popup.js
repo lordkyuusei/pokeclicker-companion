@@ -34,11 +34,11 @@ const updateToggles = () => {
         chrome.tabs.sendMessage(tabs[0].id, {
             message: 'update-toggles'
         }, (response) => {
-            const { autoclicker, hatchery, dungeon, battlefrontier } = response;
+            const { autoclicker, autohatch, dungeon, battleFrontier } = response;
             toggleAutoclicker.checked = autoclicker;
-            toggleHatchery.checked = hatchery;
+            toggleHatchery.checked = autohatch;
             toggleDungeon.checked = dungeon;
-            toggleBattleFrontier.checked = battlefrontier;
+            toggleBattleFrontier.checked = battleFrontier;
         });
     });
 }
@@ -64,7 +64,10 @@ toggleHatchery.onchange = (event) => toggle(event.target.checked, 'toggle-optimi
 });
 toggleBattleFrontier.onchange = (event) => toggle(event.target.checked, 'toggle-battlefrontier-on', 'toggle-battlefrontier-off');
 
-selectHatchery.onchange = (event) => toggle(false, 'toggle-optimized-hatchery-on', 'toggle-optimized-hatchery-off')
+selectHatchery.onchange = (event) => {
+    console.log('select updated')
+    return toggle(false, 'toggle-optimized-hatchery-on', 'toggle-optimized-hatchery-off');
+}
 toggle(true, 'toggle-main-on', 'toggle-main-off');
 feedHatchSortOption();
 updateToggles();
