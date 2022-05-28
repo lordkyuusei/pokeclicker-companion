@@ -8,6 +8,8 @@ const autohatchUrl = 'js/hatchery/autohatchScript.js';
 const undohatchUrl = 'js/hatchery/undohatchScript.js';
 const autodungeonUrl = 'js/dungeon/autodungeonScript.js';
 const undodungeonUrl = 'js/dungeon/undodungeonScript.js';
+const autocatchtypeUrl = 'js/catching/autocatchScript.js';
+const undocatchtypeUrl = 'js/catching/undocatchScript.js';
 const autoBattleFrontierUrl = 'js/battleFrontier/autobattlefrontierScript.js';
 const undoBattleFrontierUrl = 'js/battleFrontier/undoBattlefrontierScript.js';
 
@@ -18,6 +20,8 @@ const undoclickId = 'undoclickerScript';
 const undohatchId = 'undohatchScript';
 const autodungeonId = 'autodungeonScript';
 const undodungeonId = 'undodungeonScript';
+const autocatchtypeId = 'autocatchTypeScript';
+const undocatchtypeId = 'undocatchtypeScript';
 const autoBattleFrontierId = 'autobattlefrontierScript';
 const undoBattleFrontierId = 'undobattlefrontierScript';
 
@@ -54,22 +58,33 @@ const getTogglesStates = () => {
     const autohatch = document.getElementById(autohatchId);
     const dungeon = document.getElementById(autodungeonId);
     const battleFrontier = document.getElementById(autoBattleFrontierId);
+    const autocatch = document.getElementById(autocatchtypeId);
 
     return {
         autoclicker: autoclicker !== null,
         autohatch: autohatch !== null,
         dungeon: dungeon !== null,
         battleFrontier: battleFrontier !== null,
+        autocatch: autocatch !== null
     };
 }
 
 /**
+ * Toggling autocatch type on. 
+ */
+const toggleAutoCatchTypeOff = () => {
+    ejectScript(autocatchtypeId);
+    injectScript(undocatchtypeUrl, undocatchtypeId);
+    return ejectScript(undocatchtypeId);
+}
+const toggleAutoCatchTypeOn = (params) => injectScript(autocatchtypeUrl, autocatchtypeId, params);
+
+/**
  * Toggling Battle Frontier Reset.
  */
-
 const toggleBattleFrontierOff = () => {
     ejectScript(autoBattleFrontierId);
-    injectScript(autoBattleFrontierUrl, autoBattleFrontierId);
+    injectScript(undoBattleFrontierUrl, undoBattleFrontierId);
     return ejectScript(autoBattleFrontierId);
 }
 const toggleBattleFrontierOn = () => injectScript(autoBattleFrontierUrl, autoBattleFrontierId);
@@ -115,6 +130,8 @@ const mapMessageToFunction = {
     'toggle-autoclicker-off': toggleAutoclickerOff,
     'toggle-optimized-hatchery-on': toggleOptimizedHatcheryOn,
     'toggle-optimized-hatchery-off': toggleOptimizedHatcheryOff,
+    'toggle-autocatch-type-on': toggleAutoCatchTypeOn,
+    'toggle-autocatch-type-off': toggleAutoCatchTypeOff,
     'toggle-dungeon-runner-on': toggleDungeonRunnerOn,
     'toggle-dungeon-runner-off': toggleDungeonRunnerOff,
     'toggle-battlefrontier-on': toggleBattleFrontierOn,

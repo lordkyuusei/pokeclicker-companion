@@ -38,6 +38,8 @@
                 "js/hatchery/undohatchScript.js",
                 "js/dungeon/autodungeonScript.js",
                 "js/dungeon/undodungeonScript.js",
+                "js/catching/autocatchScript.js",
+                "js/catching/undocatchScript.js",
                 "js/battleFrontier/autobattlefrontierScript.js",
                 "js/battleFrontier/undobattlefrontierScript.js",
                 "js/toggleMainScript.js"
