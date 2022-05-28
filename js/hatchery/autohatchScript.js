@@ -12,5 +12,12 @@ intervalMap.set('autohatchInterval', setInterval(() => {
         if (firstAvailable) {
             App.game.breeding.addPokemonToHatchery(firstAvailable);
         }
+    } else {
+        App.game.breeding.eggList.forEach((eggFunc, i) => {
+            const egg = eggFunc();
+            if (egg.progress() > 100) {
+                App.game.breeding.hatchPokemonEgg(i);
+            }
+        })
     }
 }, 1000));
