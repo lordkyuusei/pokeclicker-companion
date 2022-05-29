@@ -126,7 +126,7 @@ if (App.game && player.town().dungeon) {
         };
         this.launchDungeon = async function () {
             this.runs = intervalMap.get('dungeonRunsOption');
-            while (App.game.wallet.currencies[2]() >= player.town().dungeon.tokenCost && this.runs !== 0) {
+            while (App.game.wallet.currencies[2]() >= player.town().dungeon.tokenCost && this.runs > 0) {
                 DungeonRunner.initializeDungeon(player.town().dungeon);
                 this.setupads();
                 await this.loop();
