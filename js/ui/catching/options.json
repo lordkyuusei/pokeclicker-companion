@@ -1,74 +1,74 @@
 [
     {
         "id": 0,
-        "label": "Normal"
+        "label": "type_normal"
     },
     {
         "id": 1,
-        "label": "Fire"
+        "label": "type_fire"
     },
     {
         "id": 2,
-        "label": "Water"
+        "label": "type_water"
     },
     {
         "id": 3,
-        "label": "Electric"
+        "label": "type_electric"
     },
     {
         "id": 4,
-        "label": "Grass"
+        "label": "type_grass"
     },
     {
         "id": 5,
-        "label": "Ice"
+        "label": "type_ice"
     },
     {
         "id": 6,
-        "label": "Fighting"
+        "label": "type_fighting"
     },
     {
         "id": 7,
-        "label": "Poison"
+        "label": "type_poison"
     },
     {
         "id": 8,
-        "label": "Ground"
+        "label": "type_ground"
     },
     {
         "id": 9,
-        "label": "Flying"
+        "label": "type_flying"
     },
     {
         "id": 10,
-        "label": "Psychic"
+        "label": "type_psychic"
     },
     {
         "id": 11,
-        "label": "Bug"
+        "label": "type_bug"
     },
     {
         "id": 12,
-        "label": "Rock"
+        "label": "type_rock"
     },
     {
         "id": 13,
-        "label": "Ghost"
+        "label": "type_ghost"
     },
     {
         "id": 14,
-        "label": "Dragon"
+        "label": "type_dragon"
     },
     {
         "id": 15,
-        "label": "Dark"
+        "label": "type_dark"
     },
     {
         "id": 16,
-        "label": "Steel"
+        "label": "type_steel"
     },
     {
         "id": 17,
-        "label": "Fairy"
+        "label": "type_fairy"
     }
 ]

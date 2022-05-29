@@ -15,7 +15,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === 'complete' && tab.url.includes('pokeclicker')) {
+    if (changeInfo.status === 'complete' && tab.url?.includes('pokeclicker')) {
         chrome.scripting.executeScript({
             target: { tabId: tabId },
             files: ['js/pokeclicker.js'],

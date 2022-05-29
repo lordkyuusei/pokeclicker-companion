@@ -5,6 +5,8 @@ import feedCatchSelect from "./ui/catching/catch.js";
 import feedHatcherySelect from "./ui/hatchery/hatch.js";
 import feedDungeonSelect from "./ui/dungeon/dungeon.js";
 
+import translateApp from './ui/texts/i18n.js';
+
 const toggleDungeon = document.getElementById('toggle-dungeon');
 const toggleHatchery = document.getElementById('toggle-hatchery');
 const toggleAutoclicker = document.getElementById('toggle-autoclicker');
@@ -62,6 +64,7 @@ selectHatchery.onchange = (event) => toggle(false, 'toggle-optimized-hatchery-on
 selectDungeonRuns.onchange = (event) => toggle(false, 'toggle-dungeon-runner-on', 'toggle-dungeon-runner-off', updateToggles);
 selectClickDelay.onchange = (event) => toggle(false, 'toggle-autoclicker-on', 'toggle-autoclicker-off', updateToggles);
 
-toggle(true, 'toggle-main-on', 'toggle-main-off');
+translateApp();
 updateToggles();
 makeLinksClickable(links);
+toggle(true, 'toggle-main-on', 'toggle-main-off');

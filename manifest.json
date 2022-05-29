@@ -9,8 +9,8 @@
             "56": "icons/icon56.png"
         }
     },
-    "default_locale": "en",
-    "description": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
+    "default_locale": "fr",
+    "description": "__MSG_manifest_description__",
     "icons": {
         "28": "icons/icon28.png",
         "56": "icons/icon56.png",

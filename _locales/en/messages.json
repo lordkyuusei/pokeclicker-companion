@@ -1,0 +1,162 @@
+{
+    "manifest_description": {
+        "message": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
+        "description": "Application description. type"
+    },
+    "label_autoclicker": {
+        "message": "Autoclicker",
+        "description": "Label for autoclicker. type"
+    },
+    "label_hatchery": {
+        "message": "Hatchery",
+        "description": "Label for hatchery. type"
+    },
+    "label_dungeon": {
+        "message": "Dungeon",
+        "description": "Label for dungeon. type"
+    },
+    "label_battlefrontier": {
+        "message": "Battle Frontier",
+        "description": "Label for battle frontier. type"
+    },
+    "label_catch": {
+        "message": "Catch",
+        "description": "Label for catch. type"
+    },
+    "details_autoclicker": {
+        "message": "Enables Autoclicker. Works on wild pokemon, gym leaders and champions.",
+        "description": "Details for autoclicker. type"
+    },
+    "details_hatchery": {
+        "message": "Enables Hatchery. Hatch (or makes an egg from) Pokemon sorted accordingly to the setting.",
+        "description": "Details for hatchery. type"
+    },
+    "details_dungeon": {
+        "message": "Enables Dungeon. Solves N dungeons based on the setting.",
+        "description": "Details for dungeon. type"
+    },
+    "details_battlefrontier": {
+        "message": "Enables Battle Frontier. Runs N runs based on the setting.",
+        "description": "Details for battle frontier. type"
+    },
+    "details_catch": {
+        "message": "Enables Catch based on type. Checks if should catch every 500ms : do not use a faster autoclicker!",
+        "description": "Details for catch. type"
+    },
+    "type_normal": {
+        "message": "Normal",
+        "description": "Name of the normal type"
+    },
+    "type_fire": {
+        "message": "Fire",
+        "description": "Name of the feu type"
+    },
+    "type_water": {
+        "message": "Water",
+        "description": "Name of the eau type"
+    },
+    "type_electric": {
+        "message": "Electric",
+        "description": "Name of the electrique type"
+    },
+    "type_grass": {
+        "message": "Grass",
+        "description": "Name of the plante type"
+    },
+    "type_ice": {
+        "message": "Ice",
+        "description": "Name of the glace type"
+    },
+    "type_fighting": {
+        "message": "Fighting",
+        "description": "Name of the combat type"
+    },
+    "type_poison": {
+        "message": "Poison",
+        "description": "Name of the poison type"
+    },
+    "type_ground": {
+        "message": "Ground",
+        "description": "Name of the sol type"
+    },
+    "type_flying": {
+        "message": "Flying",
+        "description": "Name of the vol type"
+    },
+    "type_psychic": {
+        "message": "Psychic",
+        "description": "Name of the psy type"
+    },
+    "type_bug": {
+        "message": "Bug",
+        "description": "Name of the insecte type"
+    },
+    "type_rock": {
+        "message": "Rock",
+        "description": "Name of the roche type"
+    },
+    "type_ghost": {
+        "message": "Ghost",
+        "description": "Name of the spectre type"
+    },
+    "type_dragon": {
+        "message": "Dragon",
+        "description": "Name of the dragon type"
+    },
+    "type_dark": {
+        "message": "Dark",
+        "description": "Name of the ténèbres type"
+    },
+    "type_steel": {
+        "message": "Steel",
+        "description": "Name of the acier type"
+    },
+    "type_fairy": {
+        "message": "Fairy",
+        "description": "Name of the fée"
+    },
+    "breed_id": {
+        "message": "Id",
+        "description": "Nom du tri par id"
+    },
+    "breed_name": {
+        "message": "Name",
+        "description": "Nom du tri par nom"
+    },
+    "breed_attack": {
+        "message": "Attack",
+        "description": "Nom du tri par attaque"
+    },
+    "breed_level": {
+        "message": "Level",
+        "description": "Nom du tri par niveau"
+    },
+    "breed_shiny": {
+        "message": "Shiny",
+        "description": "Nom du tri par chromatique"
+    },
+    "breed_base_attack": {
+        "message": "Base Attack",
+        "description": "Nom du tri par attaque de base"
+    },
+    "breed_breeding_eff": {
+        "message": "Breeding Effi.",
+        "description": "Nom du tri par ratio attaque / pas pour éclore"
+    },
+    "breed_egg_steps": {
+        "message": "Egg Steps",
+        "description": "Nom du tri par nombre de pas"
+    },
+    "breed_times_hatched": {
+        "message": "Times Hatched",
+        "description": "Nom du tri par nombre d'éclosion"
+    },
+    "breed_category": {
+        "message": "Category",
+        "description": "Nom du tri par catégorie"
+    },
+    "breed_proteins_used": {
+        "message": "Proteins Used",
+        "description": "Nom du tri par nombre de protéines"
+    }
+}

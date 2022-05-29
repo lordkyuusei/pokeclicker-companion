@@ -1,0 +1,162 @@
+{
+    "manifest_description": {
+        "message": "Automatisez Pokéclicker! Vous pourrez utiliser un autoclicker, un système de pension autonome, farmer des donjons en boucle et plus encore.",
+        "description": "Description de l'app."
+    },
+    "label_autoclicker": {
+        "message": "Auto-Cliqueur",
+        "description": "Nom de l'auto-cliqueur"
+    },
+    "label_hatchery": {
+        "message": "Auto-Pensionnat",
+        "description": "Nom de l'auto-pensionnat"
+    },
+    "label_dungeon": {
+        "message": "Auto-Donjon",
+        "description": "Nom de l'auto-donjon"
+    },
+    "label_battlefrontier": {
+        "message": "Auto-Zone de combat",
+        "description": "Nom de l'auto-zone de combat"
+    },
+    "label_catch": {
+        "message": "Auto-Capture par type",
+        "description": "Nom de l'auto-capture"
+    },
+    "details_autoclicker": {
+        "message": "Active un clicker automatique toutes les 100ms. Fonctionne sur les pokémon sauvages, les arènes et les champions.",
+        "description": "Nom de l'auto-cliqueur"
+    },
+    "details_hatchery": {
+        "message": "Active un incubateur automatique. Fais éclore ou incube un nouveau pokémon par seconde, en fonction du setting choisi.",
+        "description": "Nom de l'auto-pensionnat"
+    },
+    "details_dungeon": {
+        "message": "Active un résolveur de donjon automatique. Une action / 500ms. Contient déjà un autoclicker : ne pas activer l'autre option !",
+        "description": "Nom de l'auto-donjon"
+    },
+    "details_battlefrontier": {
+        "message": "Relance indéfiniment la zone de combat. Ne fonctionne que si vous y avez déjà accès.",
+        "description": "Nom de l'auto-zone de combat"
+    },
+    "details_catch": {
+        "message": "Capture automatiquement les pokémon du type sélectionné. La vérification se fait toutes les 500ms ; ne pas activer l'autoclicker.",
+        "description": "Nom de l'auto-capture"
+    },
+    "type_normal": {
+        "message": "Normal",
+        "description": "Nom du type normal"
+    },
+    "type_fire": {
+        "message": "Feu",
+        "description": "Nom du type feu"
+    },
+    "type_water": {
+        "message": "Eau",
+        "description": "Nom du type eau"
+    },
+    "type_electric": {
+        "message": "Electrique",
+        "description": "Nom du type electrique"
+    },
+    "type_grass": {
+        "message": "Plante",
+        "description": "Nom du type plante"
+    },
+    "type_ice": {
+        "message": "Glace",
+        "description": "Nom du type glace"
+    },
+    "type_fighting": {
+        "message": "Combat",
+        "description": "Nom du type combat"
+    },
+    "type_poison": {
+        "message": "Poison",
+        "description": "Nom du type poison"
+    },
+    "type_ground": {
+        "message": "Sol",
+        "description": "Nom du type sol"
+    },
+    "type_flying": {
+        "message": "Vol",
+        "description": "Nom du type vol"
+    },
+    "type_psychic": {
+        "message": "Psy",
+        "description": "Nom du type psy"
+    },
+    "type_bug": {
+        "message": "Insecte",
+        "description": "Nom du type insecte"
+    },
+    "type_rock": {
+        "message": "Roche",
+        "description": "Nom du type roche"
+    },
+    "type_ghost": {
+        "message": "Spectre",
+        "description": "Nom du type spectre"
+    },
+    "type_dragon": {
+        "message": "Dragon",
+        "description": "Nom du type dragon"
+    },
+    "type_dark": {
+        "message": "Ténèbres",
+        "description": "Nom du type ténèbres"
+    },
+    "type_steel": {
+        "message": "Acier",
+        "description": "Nom du type acier"
+    },
+    "type_fairy": {
+        "message": "Fée",
+        "description": "Nom du type fée"
+    },
+    "breed_id": {
+        "message": "Id",
+        "description": "Nom du tri par id"
+    },
+    "breed_name": {
+        "message": "Nom",
+        "description": "Nom du tri par nom"
+    },
+    "breed_attack": {
+        "message": "Attaque",
+        "description": "Nom du tri par attaque"
+    },
+    "breed_level": {
+        "message": "Niveau",
+        "description": "Nom du tri par niveau"
+    },
+    "breed_shiny": {
+        "message": "Chromatique",
+        "description": "Nom du tri par chromatique"
+    },
+    "breed_base_attack": {
+        "message": "Attaque de base",
+        "description": "Nom du tri par attaque de base"
+    },
+    "breed_breeding_eff": {
+        "message": "Eff. Elevage",
+        "description": "Nom du tri par ratio attaque / pas pour éclore"
+    },
+    "breed_egg_steps": {
+        "message": "Nombre de pas",
+        "description": "Nom du tri par nombre de pas"
+    },
+    "breed_times_hatched": {
+        "message": "Nombre d'éclosion",
+        "description": "Nom du tri par nombre d'éclosion"
+    },
+    "breed_category": {
+        "message": "Catégorie",
+        "description": "Nom du tri par catégorie"
+    },
+    "breed_proteins_used": {
+        "message": "Nombre de protéines",
+        "description": "Nom du tri par nombre de protéines"
+    }
+}

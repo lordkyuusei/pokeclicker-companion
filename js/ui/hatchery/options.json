@@ -1,46 +1,46 @@
 [
     {
         "id": 0,
-        "label": "Id"
+        "label": "breed_id"
     },
     {
         "id": 1,
-        "label": "Name"
+        "label": "breed_name"
     },
     {
         "id": 2,
-        "label": "Attack"
+        "label": "breed_attack"
     },
     {
         "id": 3,
-        "label": "Level"
+        "label": "breed_level"
     },
     {
         "id": 4,
-        "label": "Shiny"
+        "label": "breed_shiny"
     },
     {
         "id": 5,
-        "label": "Base Attack"
+        "label": "breed_base_attack"
     },
     {
         "id": 6,
-        "label": "Breeding Eff."
+        "label": "breed_breeding_eff"
     },
     {
         "id": 7,
-        "label": "Egg Steps"
+        "label": "breed_egg_steps"
     },
     {
         "id": 8,
-        "label": "Times hatched"
+        "label": "breed_times_hatched"
     },
     {
         "id": 9,
-        "label": "Category"
+        "label": "breed_category"
     },
     {
         "id": 10,
-        "label": "Proteins used"
+        "label": "breed_proteins_used"
     }
 ]

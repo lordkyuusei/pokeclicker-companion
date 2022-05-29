@@ -4,7 +4,7 @@ export default (select) => {
     const uiOptions = options.map(option => {
         const elem = document.createElement('option');
         elem.value = option.id;
-        elem.innerText = option.label;
+        elem.innerText = chrome.i18n.getMessage(option.label);
         return elem;
     })
 
