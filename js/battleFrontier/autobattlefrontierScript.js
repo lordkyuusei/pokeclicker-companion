@@ -1,4 +1,4 @@
-if (App.game) {
+if (App.game && App.game.battleFrontier.canAccess()) {
     intervalMap.set('autobattlefrontierInterval', setInterval(() => {
         if (BattleFrontierRunner.started() === false) {
             BattleFrontierRunner.start();
