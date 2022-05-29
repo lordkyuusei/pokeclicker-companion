@@ -1,32 +1,33 @@
 {
-    "name": "Pokeclicker Companion",
-    "description": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
-    "author": "Kyuu",
-    "version": "1.1.0",
     "manifest_version": 3,
+    "version": "1.1.0",
+    "name": "Pokeclicker Companion",
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_icon": {
+            "28": "icons/icon28-dark.png",
+            "56": "icons/icon56.png"
+        }
+    },
+    "default_locale": "en",
+    "description": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
     "icons": {
         "28": "icons/icon28.png",
         "56": "icons/icon56.png",
         "112": "icons/icon112.png"
     },
+    "author": "Kyuu",
     "background": {
         "service_worker": "./js/background.js"
     },
-    "action": {
-        "default_popup": "html/popup.html",
-        "default_icon": {
-            "28": "icons/icon28.png",
-            "56": "icons/icon56.png"
-        }
-    },
+    "host_permissions": [
+        "https://www.pokeclicker.com/*"
+    ],
     "options_page": "html/options.html",
     "permissions": [
         "activeTab",
         "declarativeContent",
         "scripting"
-    ],
-    "host_permissions": [
-        "https://www.pokeclicker.com/*"
     ],
     "web_accessible_resources": [
         {

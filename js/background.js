@@ -15,12 +15,17 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === 'complete') {
+    if (changeInfo.status === 'complete' && tab.url.includes('pokeclicker')) {
         chrome.scripting.executeScript({
             target: { tabId: tabId },
             files: ['js/pokeclicker.js'],
         })
-            .then(() => console.log('pokeclicker.js injected'))
+            .then(() => {
+                chrome.action.setIcon({ path: { "28": "../icons/icon28.png" } })
+                return console.log('pokeclicker.js injected');
+            })
             .catch(error => console.log(error));
+    } else {
+        chrome.action.setIcon({ path: { "28": "../icons/icon28-dark.png" } })
     }
 });
