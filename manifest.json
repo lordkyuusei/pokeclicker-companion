@@ -1,9 +1,8 @@
 {
     "name": "Pokeclicker Companion",
-    "short_description": "A companion app for the Pokeclicker game.",
     "description": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
     "author": "Kyuu",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "manifest_version": 3,
     "icons": {
         "28": "icons/icon28.png",
@@ -32,17 +31,17 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "js/autoclicker/autoclickerScript.js",
-                "js/autoclicker/undoclickerScript.js",
-                "js/hatchery/autohatchScript.js",
-                "js/hatchery/undohatchScript.js",
-                "js/dungeon/autodungeonScript.js",
-                "js/dungeon/undodungeonScript.js",
-                "js/catching/autocatchScript.js",
-                "js/catching/undocatchScript.js",
-                "js/battleFrontier/autobattlefrontierScript.js",
-                "js/battleFrontier/undobattlefrontierScript.js",
-                "js/toggleMainScript.js"
+                "js/features/autoclicker/autoclickerScript.js",
+                "js/features/autoclicker/undoclickerScript.js",
+                "js/features/hatchery/autohatchScript.js",
+                "js/features/hatchery/undohatchScript.js",
+                "js/features/dungeon/autodungeonScript.js",
+                "js/features/dungeon/undodungeonScript.js",
+                "js/features/catching/autocatchScript.js",
+                "js/features/catching/undocatchScript.js",
+                "js/features/battleFrontier/autobattlefrontierScript.js",
+                "js/features/battleFrontier/undobattlefrontierScript.js",
+                "js/features/toggleMainScript.js"
             ],
             "matches": [
                 "<all_urls>"

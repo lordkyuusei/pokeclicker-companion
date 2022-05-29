@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "label": "Id"
+    },
+    {
+        "id": 1,
+        "label": "Name"
+    },
+    {
+        "id": 2,
+        "label": "Attack"
+    },
+    {
+        "id": 3,
+        "label": "Level"
+    },
+    {
+        "id": 4,
+        "label": "Shiny"
+    },
+    {
+        "id": 5,
+        "label": "Base Attack"
+    },
+    {
+        "id": 6,
+        "label": "Breeding Eff."
+    },
+    {
+        "id": 7,
+        "label": "Egg Steps"
+    },
+    {
+        "id": 8,
+        "label": "Times hatched"
+    },
+    {
+        "id": 9,
+        "label": "Category"
+    },
+    {
+        "id": 10,
+        "label": "Proteins used"
+    }
+]

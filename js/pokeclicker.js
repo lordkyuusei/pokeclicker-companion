@@ -1,17 +1,18 @@
 /**
  * Constants
  */
-const mainScriptUrl = 'js/toggleMainScript.js';
-const autoclickUrl = 'js/autoclicker/autoclickerScript.js';
-const undoclickUrl = 'js/autoclicker/undoclickerScript.js';
-const autohatchUrl = 'js/hatchery/autohatchScript.js';
-const undohatchUrl = 'js/hatchery/undohatchScript.js';
-const autodungeonUrl = 'js/dungeon/autodungeonScript.js';
-const undodungeonUrl = 'js/dungeon/undodungeonScript.js';
-const autocatchtypeUrl = 'js/catching/autocatchScript.js';
-const undocatchtypeUrl = 'js/catching/undocatchScript.js';
-const autoBattleFrontierUrl = 'js/battleFrontier/autobattlefrontierScript.js';
-const undoBattleFrontierUrl = 'js/battleFrontier/undoBattlefrontierScript.js';
+const FEATURES = 'js/features';
+const mainScriptUrl = `${FEATURES}/toggleMainScript.js`;
+const autoclickUrl = `${FEATURES}/autoclicker/autoclickerScript.js`;
+const undoclickUrl = `${FEATURES}/autoclicker/undoclickerScript.js`;
+const autohatchUrl = `${FEATURES}/hatchery/autohatchScript.js`;
+const undohatchUrl = `${FEATURES}/hatchery/undohatchScript.js`;
+const autodungeonUrl = `${FEATURES}/dungeon/autodungeonScript.js`;
+const undodungeonUrl = `${FEATURES}/dungeon/undodungeonScript.js`;
+const autocatchtypeUrl = `${FEATURES}/catching/autocatchScript.js`;
+const undocatchtypeUrl = `${FEATURES}/catching/undocatchScript.js`;
+const autoBattleFrontierUrl = `${FEATURES}/battleFrontier/autobattlefrontierScript.js`;
+const undoBattleFrontierUrl = `${FEATURES}/battleFrontier/undoBattlefrontierScript.js`;
 
 const mainScriptId = 'toggleMainId';
 const autohatchId = 'autohatchScript';
@@ -97,7 +98,7 @@ const toggleDungeonRunnerOff = () => {
     injectScript(undodungeonUrl, undodungeonId);
     return ejectScript(undodungeonId);
 }
-const toggleDungeonRunnerOn = () => injectScript(autodungeonUrl, autodungeonId);
+const toggleDungeonRunnerOn = (params) => injectScript(autodungeonUrl, autodungeonId, params);
 /**
  * Toggling Autohatch. Set to 1000ms to match game's ticks.
  */
@@ -117,7 +118,7 @@ const toggleAutoclickerOff = () => {
     injectScript(undoclickUrl, undoclickId);
     return ejectScript(undoclickId);
 };
-const toggleAutoclickerOn = () => injectScript(autoclickUrl, autoclickId);
+const toggleAutoclickerOn = (params) => injectScript(autoclickUrl, autoclickId, params);
 
 /**
  * Toggle main script with interval map.

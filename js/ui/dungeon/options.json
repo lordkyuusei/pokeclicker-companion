@@ -1,0 +1,22 @@
+[
+    {
+        "id": 5,
+        "label": "5 runs"
+    },
+    {
+        "id": 10,
+        "label": "10 runs"
+    },
+    {
+        "id": 25,
+        "label": "25 runs"
+    },
+    {
+        "id": 50,
+        "label": "50 runs"
+    },
+    {
+        "id": -1,
+        "label": "Sans fin"
+    }
+]

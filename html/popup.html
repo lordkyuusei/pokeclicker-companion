@@ -14,33 +14,67 @@
     </header>
     <main>
         <div class="toggles">
-            <label for="toggle-autoclicker">Autoclicker (100ms)</label>
-            <div>placeholder</div>
+            <details>
+                <summary><label for="toggle-autoclicker">Auto-Click</label></summary>
+                <div>
+                    Active un clicker automatique toutes les 100ms. Fonctionne sur les pokémon sauvages, les arènes et
+                    les
+                    champions.
+                </div>
+            </details>
+            <select id="select-click-delay"></select>
             <input type="checkbox" id="toggle-autoclicker">
 
-            <label for="toggle-hatchery">Autohatchery (1000ms)</label>
+            <details>
+                <summary><label for="toggle-hatchery">Auto-Hatch</label></summary>
+                <div>
+                    Active un incubateur automatique. Fais éclore ou incube un nouveau pokémon par seconde, en fonction
+                    du
+                    setting choisi.
+                </div>
+            </details>
             <select id="select-hatchery"></select>
             <input type="checkbox" id="toggle-hatchery">
 
-            <label for="toggle-dungeon">Autodungeon (500ms)</label>
-            <div>placeholder</div>
+            <details>
+                <summary><label for="toggle-dungeon">Auto-Dungeon</label></summary>
+                <div>
+                    Active un résolveur de donjon automatique. Une action / 500ms. Contient déjà un autoclicker : ne pas
+                    activer l'autre option !
+                </div>
+            </details>
+            <select id="select-dungeon-runs"></select>
             <input type="checkbox" id="toggle-dungeon">
 
-            <label for="toggle-battlefrontier">Auto Battle Frontier</label>
-            <div>placeholder</div>
+            <details>
+                <summary><label for="toggle-battlefrontier">Auto-Frontier</label></summary>
+                <div>
+                    Relance indéfiniment la zone de combat. Ne fonctionne que si vous y avez déjà accès.
+                </div>
+            </details>
+            <div>y'a r</div>
             <input type="checkbox" id="toggle-battlefrontier">
 
-            <label for="toggle-autocatch-type">Autocatch Pokémon with type: </label>
+            <details>
+                <summary><label for="toggle-autocatch-type">Auto-Catch</label></summary>
+                <div>
+                    Capture automatiquement les pokémon du type sélectionné. La vérification se fait toutes les 500ms ;
+                    ne
+                    pas activer l'autoclicker.
+                </div>
+            </details>
             <select id="select-autocatch-type"></select>
             <input type="checkbox" id="toggle-autocatch-type">
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2022 - @Kyuu</p>
+        <p>&copy; 2022 - <a id="twitter-link" href="https://www.twitter.com/_lkyuu">@_LKyuu</a>
+            <a id="github-link" href="https://github.com/lordkyuusei/pokeclicker-companion">Companion Source Code</a>
+        </p>
     </footer>
 
-    <script src="../js/popup.js"></script>
+    <script type="module" src="../js/popup.js"></script>
 </body>
 
 </html>
