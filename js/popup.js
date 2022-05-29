@@ -6,6 +6,7 @@ import feedHatcherySelect from "./ui/hatchery/hatch.js";
 import feedDungeonSelect from "./ui/dungeon/dungeon.js";
 
 import translateApp from './ui/texts/i18n.js';
+import manifest from '../manifest.json' assert { type: "json" };
 
 const toggleDungeon = document.getElementById('toggle-dungeon');
 const toggleHatchery = document.getElementById('toggle-hatchery');
@@ -20,6 +21,8 @@ const selectDungeonRuns = feedDungeonSelect(document.getElementById('select-dung
 
 const links = document.getElementsByTagName('a');
 const dCallback = (response) => console.log(response);
+
+document.getElementById('version').innerHTML = manifest.version;
 
 const updateToggles = () => {
     toggle(true, 'update-toggles', '', ({ autoclicker, autohatch, dungeon, battleFrontier, autocatch }) => {
