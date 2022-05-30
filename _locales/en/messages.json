@@ -23,6 +23,10 @@
         "message": "Catch",
         "description": "Label for catch. type"
     },
+    "label_gyms": {
+        "message": "Auto-Gym Battle",
+        "description": "Label for gyms and champions"
+    },
     "details_autoclicker": {
         "message": "Enables Autoclicker. Works on wild pokemon, gym leaders and champions.",
         "description": "Details for autoclicker. type"
@@ -42,6 +46,10 @@
     "details_catch": {
         "message": "Enables Catch based on type. Checks if should catch every 500ms : do not use a faster autoclicker!",
         "description": "Details for catch. type"
+    },
+    "details_gyms": {
+        "message": "Enables auto-gym battles. You have to clear a gym at least once to enable this feature.",
+        "description": "Details for gyms and champions."
     },
     "type_normal": {
         "message": "Normal",

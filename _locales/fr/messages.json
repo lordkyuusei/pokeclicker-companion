@@ -23,6 +23,10 @@
         "message": "Auto-Capture par type",
         "description": "Nom de l'auto-capture"
     },
+    "label_gyms": {
+        "message": "Auto-Combat d'arène",
+        "description": "Nom de l'autocombat d'arène"
+    },
     "details_autoclicker": {
         "message": "Active un clicker automatique toutes les 100ms. Fonctionne sur les pokémon sauvages, les arènes et les champions.",
         "description": "Nom de l'auto-cliqueur"
@@ -42,6 +46,10 @@
     "details_catch": {
         "message": "Capture automatiquement les pokémon du type sélectionné. La vérification se fait toutes les 500ms ; ne pas activer l'autoclicker.",
         "description": "Nom de l'auto-capture"
+    },
+    "details_gyms": {
+        "message": "Enchaîne automatiquement les combats contre l'arène sélectionnée. Vous devez l'avoir vaincue au moins une fois.",
+        "description": "Nom de l'autocombat d'arène"
     },
     "type_normal": {
         "message": "Normal",

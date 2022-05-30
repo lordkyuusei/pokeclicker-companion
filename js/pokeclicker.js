@@ -11,6 +11,9 @@ const autodungeonUrl = `${FEATURES}/dungeon/autodungeonScript.js`;
 const undodungeonUrl = `${FEATURES}/dungeon/undodungeonScript.js`;
 const autocatchtypeUrl = `${FEATURES}/catching/autocatchScript.js`;
 const undocatchtypeUrl = `${FEATURES}/catching/undocatchScript.js`;
+const autogymbattleUrl = `${FEATURES}/gyms/autogymbattleScript.js`;
+const undogymbattleUrl = `${FEATURES}/gyms/undogymbattleScript.js`;
+const gathergymsScript = `${FEATURES}/gyms/gathergymsScript.js`;
 const autoBattleFrontierUrl = `${FEATURES}/battleFrontier/autobattlefrontierScript.js`;
 const undoBattleFrontierUrl = `${FEATURES}/battleFrontier/undoBattlefrontierScript.js`;
 
@@ -23,6 +26,9 @@ const autodungeonId = 'autodungeonScript';
 const undodungeonId = 'undodungeonScript';
 const autocatchtypeId = 'autocatchTypeScript';
 const undocatchtypeId = 'undocatchtypeScript';
+const autogymbattleId = 'autogymbattleScript';
+const undogymbattleId = 'undogymbattleScript';
+const gathergymsId = 'gathergymsScript';
 const autoBattleFrontierId = 'autobattlefrontierScript';
 const undoBattleFrontierId = 'undobattlefrontierScript';
 
@@ -60,15 +66,29 @@ const getTogglesStates = () => {
     const dungeon = document.getElementById(autodungeonId);
     const battleFrontier = document.getElementById(autoBattleFrontierId);
     const autocatch = document.getElementById(autocatchtypeId);
+    const autogym = document.getElementById(autogymbattleId);
 
     return {
         autoclicker: autoclicker !== null,
         autohatch: autohatch !== null,
         dungeon: dungeon !== null,
         battleFrontier: battleFrontier !== null,
-        autocatch: autocatch !== null
+        autocatch: autocatch !== null,
+        autogym: autogym !== null
     };
 }
+
+/**
+ * Toggle auto gym battle on.
+ */
+
+const toggleGymBattleOff = () => {
+    ejectScript(autogymbattleId);
+    injectScript(undogymbattleUrl, undogymbattleId);
+    return ejectScript(undogymbattleId);
+}
+const toggleGymBattleOn = (params) => injectScript(autogymbattleUrl, autogymbattleId, params);
+const feedGymsOn = () => injectScript(gathergymsScript, gathergymsId);
 
 /**
  * Toggling autocatch type on. 
@@ -137,8 +157,11 @@ const mapMessageToFunction = {
     'toggle-dungeon-runner-off': toggleDungeonRunnerOff,
     'toggle-battlefrontier-on': toggleBattleFrontierOn,
     'toggle-battlefrontier-off': toggleBattleFrontierOff,
+    'toggle-gym-battle-on': toggleGymBattleOn,
+    'toggle-gym-battle-off': toggleGymBattleOff,
     'toggle-main-on': toggleMainOn,
     'toggle-main-off': toggleMainOff,
+    'feed-gyms-on': feedGymsOn,
     'update-toggles': getTogglesStates,
 }
 

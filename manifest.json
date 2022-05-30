@@ -20,6 +20,11 @@
     "background": {
         "service_worker": "./js/background.js"
     },
+    "externally_connectable": {
+        "matches": [
+            "*://*.pokeclicker.com/*"
+        ]
+    },
     "host_permissions": [
         "https://www.pokeclicker.com/*"
     ],
@@ -40,6 +45,9 @@
                 "js/features/dungeon/undodungeonScript.js",
                 "js/features/catching/autocatchScript.js",
                 "js/features/catching/undocatchScript.js",
+                "js/features/gyms/autogymbattleScript.js",
+                "js/features/gyms/undogymbattleScript.js",
+                "js/features/gyms/gathergymsScript.js",
                 "js/features/battleFrontier/autobattlefrontierScript.js",
                 "js/features/battleFrontier/undobattlefrontierScript.js",
                 "js/features/toggleMainScript.js"

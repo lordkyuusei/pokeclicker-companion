@@ -22,7 +22,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         })
             .then(() => {
                 chrome.action.setIcon({ path: { "28": "../icons/icon28.png" } })
-                return console.log('pokeclicker.js injected');
+                return console.log('pokeclicker.js injected', chrome.runtime.id);
             })
             .catch(error => console.log(error));
     } else {
