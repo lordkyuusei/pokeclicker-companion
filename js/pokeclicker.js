@@ -153,7 +153,7 @@ const toggleAutoclickerOn = (params) => injectScript(autoclickUrl, autoclickId, 
  * Toggle main script with interval map.
  */
 const toggleMainOff = () => console.log('off');
-const toggleMainOn = () => injectScript(mainScriptUrl, mainScriptId);
+const toggleMainOn = (params) => injectScript(mainScriptUrl, mainScriptId, params);
 
 const mapMessageToFunction = {
     'toggle-autoclicker-on': toggleAutoclickerOn,

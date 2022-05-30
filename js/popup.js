@@ -92,4 +92,7 @@ toggle(true, 'toggle-main-on', 'toggle-main-off', () => {
     toggle(true, 'feed-gyms-on', '', () => {
         toggle(false, 'feed-gyms-on', 'feed-gyms-off')
     });
+}, {
+    name: 'extensionID',
+    value: chrome.runtime.id
 });
