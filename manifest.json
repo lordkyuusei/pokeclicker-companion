@@ -48,6 +48,7 @@
                 "js/features/gyms/autogymbattleScript.js",
                 "js/features/gyms/undogymbattleScript.js",
                 "js/features/gyms/gathergymsScript.js",
+                "js/features/gyms/undogathergymsScript.js",
                 "js/features/battleFrontier/autobattlefrontierScript.js",
                 "js/features/battleFrontier/undobattlefrontierScript.js",
                 "js/features/toggleMainScript.js"

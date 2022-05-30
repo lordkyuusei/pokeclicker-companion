@@ -13,7 +13,8 @@ const autocatchtypeUrl = `${FEATURES}/catching/autocatchScript.js`;
 const undocatchtypeUrl = `${FEATURES}/catching/undocatchScript.js`;
 const autogymbattleUrl = `${FEATURES}/gyms/autogymbattleScript.js`;
 const undogymbattleUrl = `${FEATURES}/gyms/undogymbattleScript.js`;
-const gathergymsScript = `${FEATURES}/gyms/gathergymsScript.js`;
+const gathergymsUrl = `${FEATURES}/gyms/gathergymsScript.js`;
+const undogathergymsUrl = `${FEATURES}/gyms/undogathergymsScript.js`;
 const autoBattleFrontierUrl = `${FEATURES}/battleFrontier/autobattlefrontierScript.js`;
 const undoBattleFrontierUrl = `${FEATURES}/battleFrontier/undoBattlefrontierScript.js`;
 
@@ -29,6 +30,7 @@ const undocatchtypeId = 'undocatchtypeScript';
 const autogymbattleId = 'autogymbattleScript';
 const undogymbattleId = 'undogymbattleScript';
 const gathergymsId = 'gathergymsScript';
+const undogathergymsId = 'undogathergymsScript';
 const autoBattleFrontierId = 'autobattlefrontierScript';
 const undoBattleFrontierId = 'undobattlefrontierScript';
 
@@ -88,7 +90,14 @@ const toggleGymBattleOff = () => {
     return ejectScript(undogymbattleId);
 }
 const toggleGymBattleOn = (params) => injectScript(autogymbattleUrl, autogymbattleId, params);
-const feedGymsOn = () => injectScript(gathergymsScript, gathergymsId);
+
+const feedGymsOff = () => {
+    ejectScript(gathergymsId);
+    injectScript(undogathergymsUrl, undogathergymsId);
+    return ejectScript(undogathergymsId);
+}
+const feedGymsOn = () => injectScript(gathergymsUrl, gathergymsId);
+
 
 /**
  * Toggling autocatch type on. 
@@ -162,6 +171,7 @@ const mapMessageToFunction = {
     'toggle-main-on': toggleMainOn,
     'toggle-main-off': toggleMainOff,
     'feed-gyms-on': feedGymsOn,
+    'feed-gyms-off': feedGymsOff,
     'update-toggles': getTogglesStates,
 }
 

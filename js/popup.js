@@ -89,5 +89,7 @@ translateApp();
 updateToggles();
 makeLinksClickable(links);
 toggle(true, 'toggle-main-on', 'toggle-main-off', () => {
-    toggle(true, 'feed-gyms-on', '');
+    toggle(true, 'feed-gyms-on', '', () => {
+        toggle(false, 'feed-gyms-on', 'feed-gyms-off')
+    });
 });
