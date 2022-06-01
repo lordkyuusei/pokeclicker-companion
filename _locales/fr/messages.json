@@ -3,11 +3,11 @@
         "message": "Automatisez Pokéclicker! Vous pourrez utiliser un autoclicker, une pension autonome, farmer des donjons sans fin et plus encore.",
         "description": "Description de l'app."
     },
-    "label_autoclicker": {
+    "label_click": {
         "message": "Auto-Cliqueur",
         "description": "Nom de l'auto-cliqueur"
     },
-    "label_hatchery": {
+    "label_hatch": {
         "message": "Auto-Pensionnat",
         "description": "Nom de l'auto-pensionnat"
     },
@@ -27,11 +27,11 @@
         "message": "Auto-Combat d'arène",
         "description": "Nom de l'autocombat d'arène"
     },
-    "details_autoclicker": {
+    "details_click": {
         "message": "Active un clicker automatique toutes les 100ms. Fonctionne sur les pokémon sauvages, les arènes et les champions.",
         "description": "Nom de l'auto-cliqueur"
     },
-    "details_hatchery": {
+    "details_hatch": {
         "message": "Active un incubateur automatique. Fais éclore ou incube un nouveau pokémon par seconde, en fonction du setting choisi.",
         "description": "Nom de l'auto-pensionnat"
     },

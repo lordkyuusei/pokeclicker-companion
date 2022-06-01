@@ -4,57 +4,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup</title>
+    <title>Pokéclicker Companion</title>
     <link rel="stylesheet" href="../css/popup.css">
 </head>
 
 <body>
     <header>
-        <h1>Pokeclicker Companion</h1>
+        <h1>Pokéclicker Companion</h1>
     </header>
     <main>
         <div class="toggles">
             <details>
-                <summary><label id="label_autoclicker" for="toggle-autoclicker"></label></summary>
-                <div id="details_autoclicker"></div>
+                <summary><label id="label_click" for="toggle-click"></label></summary>
+                <div id="details_click"></div>
             </details>
-            <select id="select-click-delay"></select>
-            <input type="checkbox" id="toggle-autoclicker">
+            <div></div>
+            <select id="select-click"></select>
+            <input type="checkbox" id="toggle-click">
 
             <details>
-                <summary><label id="label_hatchery" for="toggle-hatchery"></label></summary>
-                <div id="details_hatchery"></div>
+                <summary><label id="label_hatch" for="toggle-hatch"></label></summary>
+                <div id="details_hatch"></div>
             </details>
-            <select id="select-hatchery"></select>
-            <input type="checkbox" id="toggle-hatchery">
+            <select id="select-hatch-region"></select>
+            <select id="select-hatch"></select>
+            <input type="checkbox" id="toggle-hatch">
 
             <details>
                 <summary><label id="label_dungeon" for="toggle-dungeon"></label></summary>
                 <div id="details_dungeon"></div>
             </details>
-            <select id="select-dungeon-runs"></select>
+            <div></div>
+            <select id="select-dungeon"></select>
             <input type="checkbox" id="toggle-dungeon">
 
             <details>
                 <summary><label id="label_battlefrontier" for="toggle-battlefrontier"></label></summary>
                 <div id="details_battlefrontier"></div>
             </details>
-            <div>y'a r</div>
+            <div>y'a</div>
+            <div>r</div>
             <input type="checkbox" id="toggle-battlefrontier">
 
             <details>
-                <summary><label id="label_catch" for="toggle-autocatch-type"></label></summary>
+                <summary><label id="label_catch" for="toggle-catch"></label></summary>
                 <div id="details_catch"></div>
             </details>
-            <select id="select-autocatch-type"></select>
-            <input type="checkbox" id="toggle-autocatch-type">
+            <div></div>
+            <select id="select-catch"></select>
+            <input type="checkbox" id="toggle-catch">
 
             <details>
-                <summary><label id="label_gyms" for="feed-gyms"></label></summary>
+                <summary><label id="label_gyms" for="toggle-gym"></label></summary>
                 <div id="details_gyms"></div>
             </details>
-            <select id="select-gym-battle"></select>
-            <input type="checkbox" id="toggle-gym-battle">
+            <div></div>
+            <select id="select-gym"></select>
+            <input type="checkbox" id="toggle-gym">
         </div>
     </main>
 

@@ -11,7 +11,7 @@
     9: "temporaryBattle" */
 
 if (App.game && BattleFrontierRunner.started() === false) {
-    intervalMap.set('clickDelayOption', document.currentScript.getAttribute('clickDelayOption'));
+    intervalMap.set('clickOption', document.currentScript.getAttribute('clickOption'));
     intervalMap.set('autoclickInterval', setInterval(() => {
         const battling = {
             2: () => Battle.clickAttack(),
@@ -21,5 +21,5 @@ if (App.game && BattleFrontierRunner.started() === false) {
         if (func) {
             func()
         }
-    }, intervalMap.get('clickDelayOption')));
+    }, intervalMap.get('clickOption')));
 }

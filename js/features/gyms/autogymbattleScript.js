@@ -1,7 +1,7 @@
-intervalMap.set('autogymbattleOption', document.currentScript.getAttribute('autogymbattleOption'));
+intervalMap.set('gymOption', document.currentScript.getAttribute('gymOption'));
 intervalMap.set('autogymbattleScript', setInterval(() => {
     if (!GymRunner?.running()) {
-        const gym = GymList[intervalMap.get('autogymbattleOption')];
+        const gym = GymList[intervalMap.get('gymOption')];
         if (gym) {
             GymRunner.startGym(gym);
         }

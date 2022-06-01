@@ -11,7 +11,7 @@ body {
 
 .toggles {
     display: grid;
-    grid-template: auto / 2fr 1fr 0.5fr;
+    grid-template: auto / 2fr 1fr 1fr 0.5fr;
     place-items: flex-start;
     gap: 0.5rem;
 }

@@ -3,11 +3,11 @@
         "message": "Automatize Pokeclicker! It will help you to setup an autoclicker, manage hatchery, crawl dungeons and more.",
         "description": "Application description. type"
     },
-    "label_autoclicker": {
+    "label_click": {
         "message": "Autoclicker",
         "description": "Label for autoclicker. type"
     },
-    "label_hatchery": {
+    "label_hatch": {
         "message": "Hatchery",
         "description": "Label for hatchery. type"
     },
@@ -27,11 +27,11 @@
         "message": "Auto-Gym Battle",
         "description": "Label for gyms and champions"
     },
-    "details_autoclicker": {
+    "details_click": {
         "message": "Enables Autoclicker. Works on wild pokemon, gym leaders and champions.",
         "description": "Details for autoclicker. type"
     },
-    "details_hatchery": {
+    "details_hatch": {
         "message": "Enables Hatchery. Hatch (or makes an egg from) Pokemon sorted accordingly to the setting.",
         "description": "Details for hatchery. type"
     },

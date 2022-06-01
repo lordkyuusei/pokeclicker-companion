@@ -1,38 +1,61 @@
-/**
- * Constants
- */
 const FEATURES = 'js/features';
-const mainScriptUrl = `${FEATURES}/toggleMainScript.js`;
-const autoclickUrl = `${FEATURES}/autoclicker/autoclickerScript.js`;
-const undoclickUrl = `${FEATURES}/autoclicker/undoclickerScript.js`;
-const autohatchUrl = `${FEATURES}/hatchery/autohatchScript.js`;
-const undohatchUrl = `${FEATURES}/hatchery/undohatchScript.js`;
-const autodungeonUrl = `${FEATURES}/dungeon/autodungeonScript.js`;
-const undodungeonUrl = `${FEATURES}/dungeon/undodungeonScript.js`;
-const autocatchtypeUrl = `${FEATURES}/catching/autocatchScript.js`;
-const undocatchtypeUrl = `${FEATURES}/catching/undocatchScript.js`;
-const autogymbattleUrl = `${FEATURES}/gyms/autogymbattleScript.js`;
-const undogymbattleUrl = `${FEATURES}/gyms/undogymbattleScript.js`;
-const gathergymsUrl = `${FEATURES}/gyms/gathergymsScript.js`;
-const undogathergymsUrl = `${FEATURES}/gyms/undogathergymsScript.js`;
-const autoBattleFrontierUrl = `${FEATURES}/battleFrontier/autobattlefrontierScript.js`;
-const undoBattleFrontierUrl = `${FEATURES}/battleFrontier/undoBattlefrontierScript.js`;
 
-const mainScriptId = 'toggleMainId';
-const autohatchId = 'autohatchScript';
-const autoclickId = 'autoclickerScript';
-const undoclickId = 'undoclickerScript';
-const undohatchId = 'undohatchScript';
-const autodungeonId = 'autodungeonScript';
-const undodungeonId = 'undodungeonScript';
-const autocatchtypeId = 'autocatchTypeScript';
-const undocatchtypeId = 'undocatchtypeScript';
-const autogymbattleId = 'autogymbattleScript';
-const undogymbattleId = 'undogymbattleScript';
-const gathergymsId = 'gathergymsScript';
-const undogathergymsId = 'undogathergymsScript';
-const autoBattleFrontierId = 'autobattlefrontierScript';
-const undoBattleFrontierId = 'undobattlefrontierScript';
+const GYMS = `${FEATURES}/gyms`;
+const CLICK = `${FEATURES}/clicking`;
+const CATCH = `${FEATURES}/catching`;
+const HATCH = `${FEATURES}/hatchery`;
+const DUNGEON = `${FEATURES}/dungeon`;
+const FRONTIER = `${FEATURES}/battle-frontier`;
+
+const mainID = 'toggleMainScript';
+
+const hatchID = 'autohatchScript';
+const undoHatchID = 'undohatchScript';
+const regionsID = 'gatherregionsScript';
+const undoRegionsID = 'undogatherregionsScript';
+
+const clickID = 'autoclickerScript';
+const undoClickID = 'undoclickerScript';
+
+const dungeonID = 'autodungeonScript';
+const undoDungeonID = 'undodungeonScript';
+
+const catchID = 'autocatchScript';
+const undoCatchID = 'undocatchScript';
+
+const gymID = 'autogymbattleScript';
+const undoGymID = 'undogymbattleScript';
+const gymsID = 'gathergymsScript';
+const undoGymsID = 'undogathergymsScript';
+
+const battleFrontierID = 'autobattlefrontierScript';
+const undoBattleFrontierID = 'undobattlefrontierScript';
+
+const mainURL = `${FEATURES}/${mainID}.js`;
+
+const hatchURL = `${HATCH}/${hatchID}.js`;
+const undoHatchURL = `${HATCH}/${undoHatchID}.js`;
+const regionsURL = `${HATCH}/${regionsID}.js`;
+const undoRegionsURL = `${HATCH}/${undoRegionsID}.js`;
+
+const clickURL = `${CLICK}/${clickID}.js`;
+const undoClickURL = `${CLICK}/${undoClickID}.js`;
+
+const dungeonURL = `${DUNGEON}/${dungeonID}.js`;
+const undoDungeonURL = `${DUNGEON}/${undoDungeonID}.js`;
+
+const catchURL = `${CATCH}/${catchID}.js`;
+const undoCatchURL = `${CATCH}/${undoCatchID}.js`;
+
+const gymURL = `${GYMS}/${gymID}.js`;
+const undoGymURL = `${GYMS}/${undoGymID}.js`;
+const gymsURL = `${GYMS}/${gymsID}.js`;
+const undoGymsURL = `${GYMS}/${undoGymsID}.js`;
+
+const battleFrontierURL = `${FRONTIER}/${battleFrontierID}.js`;
+const undoBattleFrontierURL = `${FRONTIER}/${undoBattleFrontierID}.js`;
+
+
 
 /**
  * Utility injection & ejection scripts.
@@ -63,20 +86,20 @@ const injectScript = (fileName, id, params) => {
  * Check if scripts have already been loaded & update accordingly.
  */
 const getTogglesStates = () => {
-    const autoclicker = document.getElementById(autoclickId);
-    const autohatch = document.getElementById(autohatchId);
-    const dungeon = document.getElementById(autodungeonId);
-    const battleFrontier = document.getElementById(autoBattleFrontierId);
-    const autocatch = document.getElementById(autocatchtypeId);
-    const autogym = document.getElementById(autogymbattleId);
+    const click = document.getElementById(clickID);
+    const hatch = document.getElementById(hatchID);
+    const dungeon = document.getElementById(dungeonID);
+    const battleFrontier = document.getElementById(battleFrontierID);
+    const catch_ = document.getElementById(catchID);
+    const gym = document.getElementById(gymID);
 
     return {
-        autoclicker: autoclicker !== null,
-        autohatch: autohatch !== null,
+        click: click !== null,
+        hatch: hatch !== null,
         dungeon: dungeon !== null,
         battleFrontier: battleFrontier !== null,
-        autocatch: autocatch !== null,
-        autogym: autogym !== null
+        catch_: catch_ !== null,
+        gym: gym !== null
     };
 }
 
@@ -84,94 +107,104 @@ const getTogglesStates = () => {
  * Toggle auto gym battle on.
  */
 
-const toggleGymBattleOff = () => {
-    ejectScript(autogymbattleId);
-    injectScript(undogymbattleUrl, undogymbattleId);
-    return ejectScript(undogymbattleId);
+const toggleGymOff = () => {
+    ejectScript(gymID);
+    injectScript(undoGymURL, undoGymID);
+    return ejectScript(undoGymID);
 }
-const toggleGymBattleOn = (params) => injectScript(autogymbattleUrl, autogymbattleId, params);
+const toggleGymOn = (params) => injectScript(gymURL, gymID, params);
 
-const feedGymsOff = () => {
-    ejectScript(gathergymsId);
-    injectScript(undogathergymsUrl, undogathergymsId);
-    return ejectScript(undogathergymsId);
+const selectGymsOff = () => {
+    ejectScript(gymsID);
+    injectScript(undoGymsURL, undoGymsID);
+    return ejectScript(undoGymsID);
 }
-const feedGymsOn = () => injectScript(gathergymsUrl, gathergymsId);
+const selectGymsOn = () => injectScript(gymsURL, gymsID);
 
 
 /**
  * Toggling autocatch type on. 
  */
-const toggleAutoCatchTypeOff = () => {
-    ejectScript(autocatchtypeId);
-    injectScript(undocatchtypeUrl, undocatchtypeId);
-    return ejectScript(undocatchtypeId);
+const toggleCatchOff = () => {
+    ejectScript(catchID);
+    injectScript(undoCatchURL, undoCatchID);
+    return ejectScript(undoCatchID);
 }
-const toggleAutoCatchTypeOn = (params) => injectScript(autocatchtypeUrl, autocatchtypeId, params);
+const toggleCatchOn = (params) => injectScript(catchURL, catchID, params);
 
 /**
  * Toggling Battle Frontier Reset.
  */
 const toggleBattleFrontierOff = () => {
-    ejectScript(autoBattleFrontierId);
-    injectScript(undoBattleFrontierUrl, undoBattleFrontierId);
-    return ejectScript(autoBattleFrontierId);
+    ejectScript(battleFrontierID);
+    injectScript(undoBattleFrontierURL, undoBattleFrontierID);
+    return ejectScript(undoBattleFrontierID);
 }
-const toggleBattleFrontierOn = () => injectScript(autoBattleFrontierUrl, autoBattleFrontierId);
+const toggleBattleFrontierOn = () => injectScript(battleFrontierURL, battleFrontierID);
 
 /**
  * Toggling Dungeon Runner. Set to Autoclicker Speed.
  */
-const toggleDungeonRunnerOff = () => {
-    ejectScript(autodungeonId);
-    injectScript(undodungeonUrl, undodungeonId);
-    return ejectScript(undodungeonId);
+const toggleDungeonOff = () => {
+    ejectScript(dungeonID);
+    injectScript(undoDungeonURL, undoDungeonID);
+    return ejectScript(undoDungeonID);
 }
-const toggleDungeonRunnerOn = (params) => injectScript(autodungeonUrl, autodungeonId, params);
+const toggleDungeonOn = (params) => injectScript(dungeonURL, dungeonID, params);
 /**
  * Toggling Autohatch. Set to 1000ms to match game's ticks.
  */
-const toggleOptimizedHatcheryOff = () => {
-    ejectScript(autohatchId);
-    injectScript(undohatchUrl, undohatchId);
-    return ejectScript(undohatchId);
+const toggleHatchOff = () => {
+    ejectScript(hatchID);
+    injectScript(undoHatchURL, undoHatchID);
+    return ejectScript(undoHatchID);
 }
 
-const toggleOptimizedHatcheryOn = (params) => injectScript(autohatchUrl, autohatchId, params);
+const toggleHatchOn = (params) => injectScript(hatchURL, hatchID, params);
+
+const selectRegionsOff = () => {
+    ejectScript(regionsID);
+    injectScript(undoRegionsURL, undoRegionsID);
+    return ejectScript(undoRegionsID);
+}
+
+const selectRegionsOn = (params) => injectScript(regionsURL, regionsID, params);
 
 /**
- * Toggling Autoclicker. Set to 100ms to match speedrun's allowed tools.
+* Toggling Autoclicker. Set to 100ms to match speedrun's allowed tools.
  */
-const toggleAutoclickerOff = () => {
-    ejectScript(autoclickId);
-    injectScript(undoclickUrl, undoclickId);
-    return ejectScript(undoclickId);
+const toggleClickOff = () => {
+    ejectScript(clickID);
+    injectScript(undoClickURL, undoClickID);
+    return ejectScript(undoClickID);
 };
-const toggleAutoclickerOn = (params) => injectScript(autoclickUrl, autoclickId, params);
+const toggleClickOn = (params) => injectScript(clickURL, clickID, params);
 
 /**
  * Toggle main script with interval map.
  */
 const toggleMainOff = () => console.log('off');
-const toggleMainOn = (params) => injectScript(mainScriptUrl, mainScriptId, params);
+const toggleMainOn = (params) => injectScript(mainURL, mainID, params);
 
 const mapMessageToFunction = {
-    'toggle-autoclicker-on': toggleAutoclickerOn,
-    'toggle-autoclicker-off': toggleAutoclickerOff,
-    'toggle-optimized-hatchery-on': toggleOptimizedHatcheryOn,
-    'toggle-optimized-hatchery-off': toggleOptimizedHatcheryOff,
-    'toggle-autocatch-type-on': toggleAutoCatchTypeOn,
-    'toggle-autocatch-type-off': toggleAutoCatchTypeOff,
-    'toggle-dungeon-runner-on': toggleDungeonRunnerOn,
-    'toggle-dungeon-runner-off': toggleDungeonRunnerOff,
+    'toggle-click-on': toggleClickOn,
+    'toggle-click-off': toggleClickOff,
+    'toggle-hatch-on': toggleHatchOn,
+    'toggle-hatch-off': toggleHatchOff,
+    'toggle-catch-on': toggleCatchOn,
+    'toggle-catch-type-off': toggleCatchOff,
+    'toggle-dungeon-on': toggleDungeonOn,
+    'toggle-dungeon-off': toggleDungeonOff,
     'toggle-battlefrontier-on': toggleBattleFrontierOn,
     'toggle-battlefrontier-off': toggleBattleFrontierOff,
-    'toggle-gym-battle-on': toggleGymBattleOn,
-    'toggle-gym-battle-off': toggleGymBattleOff,
+    'toggle-gym-on': toggleGymOn,
+    'toggle-gym-off': toggleGymOff,
     'toggle-main-on': toggleMainOn,
     'toggle-main-off': toggleMainOff,
-    'feed-gyms-on': feedGymsOn,
-    'feed-gyms-off': feedGymsOff,
+    'select-gyms-on': selectGymsOn,
+    'select-gyms-off': selectGymsOff,
+    'select-regions-on': selectRegionsOn,
+    'select-regions-off': selectRegionsOff,
     'update-toggles': getTogglesStates,
 }
 

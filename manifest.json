@@ -37,20 +37,22 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "js/features/autoclicker/autoclickerScript.js",
-                "js/features/autoclicker/undoclickerScript.js",
-                "js/features/hatchery/autohatchScript.js",
-                "js/features/hatchery/undohatchScript.js",
-                "js/features/dungeon/autodungeonScript.js",
-                "js/features/dungeon/undodungeonScript.js",
+                "js/features/battle-frontier/autobattlefrontierScript.js",
+                "js/features/battle-frontier/undobattlefrontierScript.js",
                 "js/features/catching/autocatchScript.js",
                 "js/features/catching/undocatchScript.js",
+                "js/features/clicking/autoclickerScript.js",
+                "js/features/clicking/undoclickerScript.js",
+                "js/features/dungeon/autodungeonScript.js",
+                "js/features/dungeon/undodungeonScript.js",
                 "js/features/gyms/autogymbattleScript.js",
                 "js/features/gyms/undogymbattleScript.js",
                 "js/features/gyms/gathergymsScript.js",
                 "js/features/gyms/undogathergymsScript.js",
-                "js/features/battleFrontier/autobattlefrontierScript.js",
-                "js/features/battleFrontier/undobattlefrontierScript.js",
+                "js/features/hatchery/autohatchScript.js",
+                "js/features/hatchery/undohatchScript.js",
+                "js/features/hatchery/gatherregionsScript.js",
+                "js/features/hatchery/undogatherregionsScript.js",
                 "js/features/toggleMainScript.js"
             ],
             "matches": [

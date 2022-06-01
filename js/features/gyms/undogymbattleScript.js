@@ -1,3 +1,3 @@
 clearInterval('autogymbattleInterval');
-intervalMap.delete('autogymbattleOption');
+intervalMap.delete('gymOption');
 intervalMap.delete('autogymbattleScript');

@@ -1,5 +1,5 @@
 if (App.game && player.town().dungeon) {
-    intervalMap.set('dungeonRunsOption', document.currentScript.getAttribute('dungeonRunsOption'));
+    intervalMap.set('dungeonOption', document.currentScript.getAttribute('dungeonOption'));
     intervalMap.set('autodungeonScript', new function () {
         /* Resets the internal data to default */
         this.setupads = function () {
@@ -125,7 +125,7 @@ if (App.game && player.town().dungeon) {
             }
         };
         this.launchDungeon = async function () {
-            this.runs = intervalMap.get('dungeonRunsOption');
+            this.runs = intervalMap.get('dungeonOption');
             while (App.game.wallet.currencies[2]() >= player.town().dungeon.tokenCost && this.runs > 0) {
                 DungeonRunner.initializeDungeon(player.town().dungeon);
                 this.setupads();
