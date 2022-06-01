@@ -192,7 +192,7 @@ const mapMessageToFunction = {
     'toggle-hatch-on': toggleHatchOn,
     'toggle-hatch-off': toggleHatchOff,
     'toggle-catch-on': toggleCatchOn,
-    'toggle-catch-type-off': toggleCatchOff,
+    'toggle-catch-off': toggleCatchOff,
     'toggle-dungeon-on': toggleDungeonOn,
     'toggle-dungeon-off': toggleDungeonOff,
     'toggle-battlefrontier-on': toggleBattleFrontierOn,
