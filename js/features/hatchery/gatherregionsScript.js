@@ -1,4 +1,4 @@
-sendMessageToExtension({
+if (App.game && player) sendMessageToExtension({
     regions: GameHelper
         .enumStrings(GameConstants.Region)
         .filter(region => GameConstants.Region[region] <= player.highestRegion())

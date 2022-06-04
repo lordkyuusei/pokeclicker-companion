@@ -51,6 +51,10 @@
         "message": "Enables auto-gym battles. You have to clear a gym at least once to enable this feature.",
         "description": "Details for gyms and champions."
     },
+    "error_message": {
+        "message": "This tool is only supposed to be used with the web app www.pokeclicker.com. To avoid scripts injections everywhere in this page, you instead see this nice little error message.",
+        "description": "Erreur"
+    },
     "type_normal": {
         "message": "Normal",
         "description": "Name of the normal type"

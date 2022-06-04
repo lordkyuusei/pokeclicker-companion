@@ -9,11 +9,12 @@ import { toggleDungeon } from './ui/dungeon/index.js';
 import { toggleGym, handleGymUpdate } from './ui/gyms/index.js';
 import { toggleBattleFrontier } from './ui/battle-frontier/index.js';
 import { toggleHatch, handleRegionUpdate } from './ui/hatchery/index.js';
+import defaultCallback from './ui/common/index.js';
 
 document.getElementById('version').innerHTML = manifest.version;
 
 const updateToggles = () => {
-    toggle(true, 'update-toggles', '', ({ click, hatch, dungeon, battleFrontier, catch_, gym }) => {
+    toggle(true, 'update-toggles', '', ({ click, hatch, dungeon, battleFrontier, catch_, gym } = {}) => {
         toggleGym.checked = gym;
         toggleHatch.checked = hatch;
         toggleClick.checked = click;
@@ -26,7 +27,6 @@ const updateToggles = () => {
 chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
     if (sender.url.includes('pokeclicker')) {
         const { gyms, regions } = request;
-        console.log(gyms, regions);
         if (gyms) {
             handleGymUpdate(gyms);
         } else if (regions) {
@@ -37,13 +37,21 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
 });
 
 translateApp();
-updateToggles();
 makeLinksClickable();
 
-toggle(true, 'toggle-main-on', 'toggle-main-off', () => {
-    toggle(true, 'select-gyms-on', '', () => toggle(false, 'select-gyms-on', 'select-gyms-off'));
-    toggle(true, 'select-regions-on', '', () => toggle(false, 'select-regions-on', 'select-regions-off'));
-}, {
-    name: 'extensionID',
-    value: chrome.runtime.id
+chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+    if (tabs[0].url?.includes("www.pokeclicker.com")) {
+        document.querySelector('.error').classList.add('hide');
+        toggle(true, 'toggle-main-on', 'toggle-main-off', (res) => {
+            updateToggles();
+            toggle(true, 'select-gyms-on', '', () => toggle(false, 'select-gyms-on', 'select-gyms-off', defaultCallback));
+            toggle(true, 'select-regions-on', '', () => toggle(false, 'select-regions-on', 'select-regions-off', defaultCallback));
+        }, {
+            name: 'extensionID',
+            value: chrome.runtime.id
+        });
+    } else {
+        document.querySelector('.toggles').classList.add('hide');
+        document.querySelector('.error').classList.add('show');
+    }
 });

@@ -51,6 +51,10 @@
         "message": "Enchaîne automatiquement les combats contre l'arène sélectionnée. Vous devez l'avoir vaincue au moins une fois.",
         "description": "Nom de l'autocombat d'arène"
     },
+    "error_message": {
+        "message": "Cet outil n'est utilisable qu'avec l'application web www.pokeclicker.com. Afin d'éviter des injections de scripts bizarres dans tous les sens, je vous affiche ce joli petit écran d'erreur.",
+        "description": "Erreur"
+    },
     "type_normal": {
         "message": "Normal",
         "description": "Nom du type normal"

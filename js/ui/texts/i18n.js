@@ -1,12 +1,11 @@
 export default () => {
-    const labels = document.querySelectorAll('[id^="label"]');
-    const details = document.querySelectorAll('[id^="details"]');
+    const texts = [
+        ...document.querySelectorAll('[id^="label"]'),
+        ...document.querySelectorAll('[id^="details"]'),
+        ...document.querySelectorAll('[id^="error"]'),
+    ]
 
-    labels.forEach(label => {
+    texts.forEach(label => {
         label.innerHTML = chrome.i18n.getMessage(label.id);
-    });
-
-    details.forEach(detail => {
-        detail.innerHTML = chrome.i18n.getMessage(detail.id);
     });
 }

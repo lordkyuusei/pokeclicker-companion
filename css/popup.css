@@ -57,3 +57,17 @@ details[open]>summary {
 details div {
     padding: 0.5rem 0.5rem 0;
 }
+
+p#error_message {
+    color: #f00;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inherit;
+}
