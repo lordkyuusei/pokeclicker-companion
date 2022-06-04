@@ -16,6 +16,7 @@ Une extension chrome / edge / équivalent (pas firefox désolé p-e un jour qui 
 ➡️ Autocapture - Permet de capturer automatiquement les pokémon d'une route en fonction de son type.
 > Par défaut, ça sélectionne l'hyperball ; comme ça si elle tombe en rade, c'est la ball inférieure qui sera choisie, et ainsi de suite.
 
+![capture d'écran du jeu](icons/screenshot.png)
 # Prochaines étapes
 ## Features
 - Pouvoir sélectionner sa ball préférée pendant l'autocapture.
