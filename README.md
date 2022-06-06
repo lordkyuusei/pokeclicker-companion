@@ -8,18 +8,17 @@ Une extension chrome / edge / équivalent (pas firefox désolé p-e un jour qui 
 > Triable par caractéristique et par région. On ne remplit pas la file d'attente puisqu'elle perd tout son intérêt, vu que c'est automatisé.
 
 ➡️ Autodungeon - Permet de compléter automatiquement les donjons.
-> Il faut d'abord aller sur l'écran du donjon en question. L'algorithme est "bête" mais consistant, il est surtout utile pour farmer les quêtes et les achievements.
+> L'algorithme est "bête" mais consistant, il est surtout utile pour farmer les quêtes et les achievements.
 
 ➡️ Autobattlefrontier - Permet de relancer automatiquement la zone de combat quand elle est terminée.
 > Voilà, c'est tout.
 
 ➡️ Autocapture - Permet de capturer automatiquement les pokémon d'une route en fonction de son type.
-> Par défaut, ça sélectionne l'hyperball ; comme ça si elle tombe en rade, c'est la ball inférieure qui sera choisie, et ainsi de suite.
+> Voilà, c'est tout²
 
 ![capture d'écran du jeu](icons/screenshot.png)
 # Prochaines étapes
 ## Features
-- Pouvoir sélectionner sa ball préférée pendant l'autocapture.
 - Pouvoir indiquer une priorité de remplissage de la pension (oeufs achetés / fossiles)
 
 ## Bugs
