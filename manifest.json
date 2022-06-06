@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "1.2.2",
+    "version": "1.2.3",
     "name": "Pokeclicker Companion",
     "action": {
         "default_popup": "html/popup.html",
@@ -45,6 +45,8 @@
                 "js/features/clicking/undoclickerScript.js",
                 "js/features/dungeon/autodungeonScript.js",
                 "js/features/dungeon/undodungeonScript.js",
+                "js/features/dungeon/gatherdungeonsScript.js",
+                "js/features/dungeon/undogatherdungeonsScript.js",
                 "js/features/gyms/autogymbattleScript.js",
                 "js/features/gyms/undogymbattleScript.js",
                 "js/features/gyms/gathergymsScript.js",

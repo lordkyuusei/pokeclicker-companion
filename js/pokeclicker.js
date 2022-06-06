@@ -19,6 +19,8 @@ const undoClickID = 'undoclickerScript';
 
 const dungeonID = 'autodungeonScript';
 const undoDungeonID = 'undodungeonScript';
+const dungeonsID = 'gatherdungeonsScript';
+const undoDungeonsID = 'undogatherdungeonsScript';
 
 const catchID = 'autocatchScript';
 const undoCatchID = 'undocatchScript';
@@ -43,6 +45,8 @@ const undoClickURL = `${CLICK}/${undoClickID}.js`;
 
 const dungeonURL = `${DUNGEON}/${dungeonID}.js`;
 const undoDungeonURL = `${DUNGEON}/${undoDungeonID}.js`;
+const dungeonsURL = `${DUNGEON}/${dungeonsID}.js`;
+const undoDungeonsURL = `${DUNGEON}/${undoDungeonsID}.js`;
 
 const catchURL = `${CATCH}/${catchID}.js`;
 const undoCatchURL = `${CATCH}/${undoCatchID}.js`;
@@ -151,6 +155,14 @@ const toggleDungeonOff = () => {
     return ejectScript(undoDungeonID);
 }
 const toggleDungeonOn = (params) => injectScript(dungeonURL, dungeonID, params);
+
+const selectDungeonsOff = () => {
+    ejectScript(dungeonsID);
+    injectScript(undoDungeonsURL, undoDungeonsID);
+    return ejectScript(undoDungeonsID);
+}
+
+const selectDungeonsOn = (params) => injectScript(dungeonsURL, dungeonsID, params);
 /**
  * Toggling Autohatch. Set to 1000ms to match game's ticks.
  */
@@ -205,6 +217,8 @@ const mapMessageToFunction = {
     'select-gyms-off': selectGymsOff,
     'select-regions-on': selectRegionsOn,
     'select-regions-off': selectRegionsOff,
+    'select-dungeons-on': selectDungeonsOn,
+    'select-dungeons-off': selectDungeonsOff,
     'update-toggles': getTogglesStates,
 }
 

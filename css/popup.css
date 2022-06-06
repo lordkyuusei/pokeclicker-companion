@@ -5,20 +5,24 @@ body {
     font-size: 14px;
     margin: 0;
     padding: 0;
-    width: 30rem;
+    width: 42rem;
     height: 5rem;
 }
 
 .toggles {
     display: grid;
     grid-template: auto / 2fr 1fr 1fr 0.5fr;
-    place-items: flex-start;
+    justify-items: flex-start;
+    align-items: center;
     gap: 0.5rem;
 }
 
 .toggles select {
     width: 100%;
     text-transform: capitalize;
+    border-radius: 5rem;
+    border: 2px solid #2c0769;
+    padding: 0.2em;
 }
 
 header,
@@ -28,9 +32,18 @@ footer {
     text-align: center;
 }
 
+header {
+    border-radius: 0 0 1em 1em;
+}
+
+footer {
+    border-radius: 1em 1em 0 0;
+}
+
 header h1 {
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.5em;
+    letter-spacing: 5px;
 }
 
 footer a {
@@ -45,13 +58,24 @@ main {
     padding: 0.5rem;
 }
 
+.info {
+    display: grid;
+    grid: 1fr / 2fr 1fr 1fr 0.5fr;
+    place-items: center;
+}
+
+.info p[id^="info_"] {
+    font-weight: bolder;
+    text-align: center;
+}
+
 details>summary {
-    list-style-type: '➡️';
+    list-style-type: '➡️ ';
     cursor: pointer;
 }
 
 details[open]>summary {
-    list-style-type: '⬇️';
+    list-style-type: '⬇️ ';
 }
 
 details div {

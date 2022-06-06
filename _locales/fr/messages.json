@@ -28,27 +28,27 @@
         "description": "Nom de l'autocombat d'arène"
     },
     "details_click": {
-        "message": "Active un clicker automatique toutes les 100ms. Fonctionne sur les pokémon sauvages, les arènes et les champions.",
+        "message": "> Fonctionne sur les pokémon sauvages, les arènes et les champions : pas les donjons.",
         "description": "Nom de l'auto-cliqueur"
     },
     "details_hatch": {
-        "message": "Active un incubateur automatique. Fais éclore ou incube un nouveau pokémon par seconde, en fonction du setting choisi.",
+        "message": "> Permet de trier par région (ou pas) et par caractéristique",
         "description": "Nom de l'auto-pensionnat"
     },
     "details_dungeon": {
-        "message": "Active un résolveur de donjon automatique. Une action / 500ms. Contient déjà un autoclicker : ne pas activer l'autre option !",
+        "message": "> Résous les donjons à raison d'une action / 500ms. Ne pas activer l'autoclick.",
         "description": "Nom de l'auto-donjon"
     },
     "details_battlefrontier": {
-        "message": "Relance indéfiniment la zone de combat. Ne fonctionne que si vous y avez déjà accès.",
+        "message": "> Ne fonctionne que si vous y avez déjà accès.",
         "description": "Nom de l'auto-zone de combat"
     },
     "details_catch": {
-        "message": "Capture automatiquement les pokémon du type sélectionné. La vérification se fait toutes les 500ms ; ne pas activer l'autoclicker.",
+        "message": "> Capture automatiquement les pokémon du type sélectionné. Ne pas activer l'autoclick.",
         "description": "Nom de l'auto-capture"
     },
     "details_gyms": {
-        "message": "Enchaîne automatiquement les combats contre l'arène sélectionnée. Vous devez l'avoir vaincue au moins une fois.",
+        "message": "> Vous devez l'avoir vaincu l'arène au moins une fois.",
         "description": "Nom de l'autocombat d'arène"
     },
     "error_message": {
@@ -119,6 +119,18 @@
         "message": "Ténèbres",
         "description": "Nom du type ténèbres"
     },
+    "ball_pokeball": {
+        "message": "Pokéball",
+        "description": "Nom de la balle Pokéball"
+    },
+    "ball_superball": {
+        "message": "Superball",
+        "description": "Nom de la balle Superball"
+    },
+    "ball_hyperball": {
+        "message": "Hyperball",
+        "description": "Nom de la balle Ultraball"
+    },
     "type_steel": {
         "message": "Acier",
         "description": "Nom du type acier"
@@ -170,5 +182,25 @@
     "breed_proteins_used": {
         "message": "Nombre de protéines",
         "description": "Nom du tri par nombre de protéines"
+    },
+    "info_main": {
+        "message": "Pour chaque fonctionnalité, cliquez sur la flèche afin d'obtenir des détails sur son fonctionnement.",
+        "description": "Description des fonctionnalités"
+    },
+    "info_feature": {
+        "message": "Fonctionnalité",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_type": {
+        "message": "Lieu / Type",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_option": {
+        "message": "Option en ➕",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_check": {
+        "message": "✅ / ❌",
+        "description": "Nom de la fonctionnalité"
     }
 }

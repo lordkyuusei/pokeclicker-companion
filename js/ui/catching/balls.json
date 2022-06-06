@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "label": "ball_pokeball"
+    },
+    {
+        "id": 1,
+        "label": "ball_superball"
+    },
+    {
+        "id": 2,
+        "label": "ball_hyperball"
+    }
+]

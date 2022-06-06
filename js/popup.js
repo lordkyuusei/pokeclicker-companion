@@ -5,7 +5,7 @@ import manifest from '../manifest.json' assert { type: "json" };
 
 import { toggleCatch } from './ui/catching/index.js';
 import { toggleClick } from './ui/clicking/index.js';
-import { toggleDungeon } from './ui/dungeon/index.js';
+import { toggleDungeon, handleDungeonUpdate } from './ui/dungeon/index.js';
 import { toggleGym, handleGymUpdate } from './ui/gyms/index.js';
 import { toggleBattleFrontier } from './ui/battle-frontier/index.js';
 import { toggleHatch, handleRegionUpdate } from './ui/hatchery/index.js';
@@ -26,13 +26,17 @@ const updateToggles = () => {
 
 chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
     if (sender.url.includes('pokeclicker')) {
-        const { gyms, regions } = request;
+        const { gyms, regions, dungeons } = request;
         if (gyms) {
             handleGymUpdate(gyms);
+            sendResponse({ response: 'gyms updated' });
         } else if (regions) {
             handleRegionUpdate(regions);
+            sendResponse({ response: 'regions updated' });
+        } else if (dungeons) {
+            handleDungeonUpdate(dungeons)
+            sendResponse({ response: 'dungeons updated' });
         }
-        sendResponse({ response: "ok" })
     }
 });
 
@@ -40,12 +44,14 @@ translateApp();
 makeLinksClickable();
 
 chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-    if (tabs[0].url?.includes("www.pokeclicker.com")) {
+    const { url } = tabs[0] || {};
+    if (url?.includes("www.pokeclicker.com")) {
         document.querySelector('.error').classList.add('hide');
         toggle(true, 'toggle-main-on', 'toggle-main-off', (res) => {
             updateToggles();
-            toggle(true, 'select-gyms-on', '', () => toggle(false, 'select-gyms-on', 'select-gyms-off', defaultCallback));
-            toggle(true, 'select-regions-on', '', () => toggle(false, 'select-regions-on', 'select-regions-off', defaultCallback));
+            toggle(true, 'select-gyms-on', '', () => toggle(false, '', 'select-gyms-off', defaultCallback));
+            toggle(true, 'select-dungeons-on', '', () => toggle(false, '', 'select-dungeons-off', defaultCallback))
+            toggle(true, 'select-regions-on', '', () => toggle(false, '', 'select-regions-off', defaultCallback));
         }, {
             name: 'extensionID',
             value: chrome.runtime.id

@@ -1,6 +1,6 @@
 import options from './options.json' assert { type: "json" };
 
-export default (select) => {
+export const feedDungeonRunsSelect = (select) => {
     const uiOptions = options.map(option => {
         const elem = document.createElement('option');
         elem.value = option.id;
@@ -11,4 +11,16 @@ export default (select) => {
     uiOptions.forEach(option => select.appendChild(option));
     select.value = 5;
     return select;
+}
+
+export const feedDungeonsSelect = (dungeonsSelect, dungeons) => {
+    const uiOptions = dungeons.map(option => {
+        const elem = document.createElement('option');
+        elem.value = option;
+        elem.innerText = option;
+        return elem;
+    })
+
+    uiOptions.forEach(option => dungeonsSelect.appendChild(option));
+    return dungeonsSelect;
 }

@@ -1,6 +1,4 @@
-import options from './options.json' assert { type: "json" };
-
-export default (select) => {
+export default (select, options) => {
     const uiOptions = options.map(option => {
         const elem = document.createElement('option');
         elem.value = option.id;

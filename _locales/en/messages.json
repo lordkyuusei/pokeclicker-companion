@@ -123,6 +123,18 @@
         "message": "Steel",
         "description": "Name of the acier type"
     },
+    "ball_pokeball": {
+        "message": "Pokeball",
+        "description": "Nom de la balle Pokéball"
+    },
+    "ball_superball": {
+        "message": "Greatball",
+        "description": "Nom de la balle Superball"
+    },
+    "ball_hyperball": {
+        "message": "Ultraball",
+        "description": "Nom de la balle Ultraball"
+    },
     "type_fairy": {
         "message": "Fairy",
         "description": "Name of the fée"
@@ -170,5 +182,25 @@
     "breed_proteins_used": {
         "message": "Proteins Used",
         "description": "Nom du tri par nombre de protéines"
+    },
+    "info_main": {
+        "message": "You can click on any feature's blue arrow to see more details.",
+        "description": "Description des fonctionnalités"
+    },
+    "info_feature": {
+        "message": "Feature",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_type": {
+        "message": "Location / kind of item",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_option": {
+        "message": "Additional option",
+        "description": "Nom de la fonctionnalité"
+    },
+    "info_check": {
+        "message": "✅ / ❌",
+        "description": "Nom de la fonctionnalité"
     }
 }
