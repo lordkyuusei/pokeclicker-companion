@@ -88,6 +88,10 @@ p#error_message {
     text-align: center;
 }
 
+a#release-link {
+    color: hsl(103, 100%, 50%);
+}
+
 .hide {
     display: none;
 }

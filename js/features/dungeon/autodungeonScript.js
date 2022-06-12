@@ -104,7 +104,7 @@ if (App.game) {
 
         /* Main dungeon crawling loop */
         this.loop = async function () {
-            while (DungeonRunner.dungeonFinished() === false && this.runs !== 0) {
+            while (DungeonRunner.dungeonFinished() === false && this.runs > 0) {
                 const { x, y } = DungeonRunner.map.playerPosition();
                 const { x: newX, y: newY } = this.nextPositions[this.direction](x, y);
                 if (![-1, this.size].includes(newY) && ![-1, this.size].includes(newX)) {
@@ -125,6 +125,9 @@ if (App.game) {
                 }
             }
         };
+        this.reset = function () {
+            this.runs = 0;
+        }
         this.launchDungeon = async function () {
             this.runs = intervalMap.get('dungeonOption');
             const dungeon = intervalMap.get('dungeonName');

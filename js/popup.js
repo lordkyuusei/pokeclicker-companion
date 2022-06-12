@@ -24,6 +24,14 @@ const updateToggles = () => {
     });
 };
 
+const updateVersion = async () => {
+    const releases = await (await fetch('https://api.github.com/repos/lordkyuusei/pokeclicker-companion/releases')).json();
+    const remoteVersion = releases[0].tag_name;
+    const currentVersion = manifest.version;
+    const version = remoteVersion > currentVersion ? `<a href="https://github.com/lordkyuusei/pokeclicker-companion/releases/tag/${remoteVersion}" id="release-link">⬇️ ${remoteVersion}</span>` : currentVersion;
+    document.getElementById('version').innerHTML = version;
+}
+
 chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
     if (sender.url.includes('pokeclicker')) {
         const { gyms, regions, dungeons } = request;
@@ -41,6 +49,7 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
 });
 
 translateApp();
+updateVersion();
 makeLinksClickable();
 
 chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
