@@ -66,7 +66,7 @@ chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
             value: chrome.runtime.id
         });
     } else {
-        document.querySelector('.toggles').classList.add('hide');
+        ['.toggles', '.info', '#info_main'].forEach(selector => document.querySelector(selector).classList.add('hide'));
         document.querySelector('.error').classList.add('show');
     }
 });

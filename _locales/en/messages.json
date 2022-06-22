@@ -202,5 +202,37 @@
     "info_check": {
         "message": "✅ / ❌",
         "description": "Nom de la fonctionnalité"
+    },
+    "region_0": {
+        "message": "Kanto",
+        "description": "Kanto en francais"
+    },
+    "region_1": {
+        "message": "Johto",
+        "description": "Johto en francais"
+    },
+    "region_2": {
+        "message": "Hoenn",
+        "description": "Hoenn en francais"
+    },
+    "region_3": {
+        "message": "Sinnoh",
+        "description": "Sinnoh en francais"
+    },
+    "region_4": {
+        "message": "Unova",
+        "description": "Unys en francais"
+    },
+    "region_5": {
+        "message": "Kalos",
+        "description": "Kalos en francais"
+    },
+    "region_6": {
+        "message": "Alola",
+        "description": "Alola en francais"
+    },
+    "region_7": {
+        "message": "Galar",
+        "description": "Galar en francais"
     }
 }

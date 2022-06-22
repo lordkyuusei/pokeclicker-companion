@@ -3,7 +3,7 @@ intervalMap.set('regionOption', document.currentScript.getAttribute('regionOptio
 intervalMap.set('autohatchInterval', setInterval(() => {
     const sortOption = parseInt(intervalMap.get('hatchOption'));
     const region = parseInt(intervalMap.get('regionOption'));
-    if (App.game && App.game.breeding.canAccess() && App.game.breeding.hasFreeEggSlot()) {
+    if (App.game && App.game.breeding.canAccess() && App.game.breeding.hasFreeQueueSlot()) {
         if (sortOption !== Settings.getSetting('hatcherySort').value) {
             Settings.setSettingByName('hatcherySort', SortOptions[SortOptions[parseInt(sortOption)]]);
             Settings.setSettingByName('hatcherySortDirection', true);

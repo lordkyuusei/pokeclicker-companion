@@ -14,11 +14,18 @@ export const feedDungeonRunsSelect = (select) => {
 }
 
 export const feedDungeonsSelect = (dungeonsSelect, dungeons) => {
-    const uiOptions = dungeons.map(option => {
-        const elem = document.createElement('option');
-        elem.value = option;
-        elem.innerText = option;
-        return elem;
+    const regions = [...new Set(dungeons.map(dungeon => dungeon.region))];
+
+    const uiOptions = regions.map(region => {
+        const group = document.createElement('optgroup');
+        group.label = chrome.i18n.getMessage(`region_${region}`);
+        dungeons.filter(dungeon => dungeon.region === region).forEach(option => {
+            const elem = document.createElement('option');
+            elem.value = option.dungeon;
+            elem.innerText = option.dungeon;
+            group.appendChild(elem);
+        });
+        return group;
     })
 
     uiOptions.forEach(option => dungeonsSelect.appendChild(option));

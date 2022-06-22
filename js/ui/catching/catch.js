@@ -7,6 +7,6 @@ export default (select, options) => {
     })
 
     uiOptions.forEach(option => select.appendChild(option));
-    select.value = 0;
+    select.value = 2;
     return select;
 }

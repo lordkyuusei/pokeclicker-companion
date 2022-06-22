@@ -59,8 +59,6 @@ const undoGymsURL = `${GYMS}/${undoGymsID}.js`;
 const battleFrontierURL = `${FRONTIER}/${battleFrontierID}.js`;
 const undoBattleFrontierURL = `${FRONTIER}/${undoBattleFrontierID}.js`;
 
-
-
 /**
  * Utility injection & ejection scripts.
  */
