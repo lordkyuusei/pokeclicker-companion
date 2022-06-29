@@ -57,7 +57,7 @@ const gymsURL = `${GYMS}/${gymsID}.js`;
 const undoGymsURL = `${GYMS}/${undoGymsID}.js`;
 
 const pokerusURL = `${POKERUS}/${pokerusID}.js`;
-const undopokerusURL = `${POKERUS}/${undoPokerusID}.js`;
+const undoPokerusURL = `${POKERUS}/${undoPokerusID}.js`;
 
 /**
  * Utility injection & ejection scripts.
@@ -138,9 +138,9 @@ const toggleCatchOn = (params) => injectScript(catchURL, catchID, params);
  * Toggling Battle Frontier Reset.
  */
 const togglePokerusOff = () => {
-    ejectScript(battleFrontierID);
-    injectScript(undoBattleFrontierURL, undoBattleFrontierID);
-    return ejectScript(undoBattleFrontierID);
+    ejectScript(pokerusID);
+    injectScript(undoPokerusURL, undoPokerusID);
+    return ejectScript(undoPokerusID);
 }
 const togglePokerusOn = () => injectScript(pokerusURL, pokerusID);
 
