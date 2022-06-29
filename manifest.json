@@ -37,8 +37,8 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "js/features/battle-frontier/autobattlefrontierScript.js",
-                "js/features/battle-frontier/undobattlefrontierScript.js",
+                "js/features/pokerus/autopokerusScript.js",
+                "js/features/pokerus/undopokerusScript.js",
                 "js/features/catching/autocatchScript.js",
                 "js/features/catching/undocatchScript.js",
                 "js/features/clicking/autoclickerScript.js",

@@ -15,9 +15,9 @@
         "message": "Dungeon",
         "description": "Label for dungeon. type"
     },
-    "label_battlefrontier": {
-        "message": "Battle Frontier",
-        "description": "Label for battle frontier. type"
+    "label_pokerus": {
+        "message": "Pokérus",
+        "description": "Label for Pokérus"
     },
     "label_catch": {
         "message": "Catch",
@@ -39,9 +39,9 @@
         "message": "Enables Dungeon. Solves N dungeons based on the setting.",
         "description": "Details for dungeon. type"
     },
-    "details_battlefrontier": {
-        "message": "Enables Battle Frontier. Runs N runs based on the setting.",
-        "description": "Details for battle frontier. type"
+    "details_pokerus": {
+        "message": "Propagates Pokérus to all your pokemon.",
+        "description": "Details for pokerus"
     },
     "details_catch": {
         "message": "Enables Catch based on type. Checks if should catch every 500ms : do not use a faster autoclicker!",

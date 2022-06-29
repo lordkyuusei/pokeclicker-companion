@@ -15,9 +15,9 @@
         "message": "Auto-Donjon",
         "description": "Nom de l'auto-donjon"
     },
-    "label_battlefrontier": {
-        "message": "Auto-Zone de combat",
-        "description": "Nom de l'auto-zone de combat"
+    "label_pokerus": {
+        "message": "Auto-Pokérus",
+        "description": "Nom de l'auto-pokérus"
     },
     "label_catch": {
         "message": "Auto-Capture par type",
@@ -39,9 +39,9 @@
         "message": "> Résous les donjons à raison d'une action / 500ms. Ne pas activer l'autoclick.",
         "description": "Nom de l'auto-donjon"
     },
-    "details_battlefrontier": {
-        "message": "> Ne fonctionne que si vous y avez déjà accès.",
-        "description": "Nom de l'auto-zone de combat"
+    "details_pokerus": {
+        "message": "> Répends le Pokérus à un maximum de pokémon.",
+        "description": "Nom du pokérus"
     },
     "details_catch": {
         "message": "> Capture automatiquement les pokémon du type sélectionné. Ne pas activer l'autoclick.",

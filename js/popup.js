@@ -7,20 +7,20 @@ import { toggleCatch } from './ui/catching/index.js';
 import { toggleClick } from './ui/clicking/index.js';
 import { toggleDungeon, handleDungeonUpdate } from './ui/dungeon/index.js';
 import { toggleGym, handleGymUpdate } from './ui/gyms/index.js';
-import { toggleBattleFrontier } from './ui/battle-frontier/index.js';
+import { togglePokerus } from './ui/pokerus/index.js';
 import { toggleHatch, handleRegionUpdate } from './ui/hatchery/index.js';
 import defaultCallback from './ui/common/index.js';
 
 document.getElementById('version').innerHTML = manifest.version;
 
 const updateToggles = () => {
-    toggle(true, 'update-toggles', '', ({ click, hatch, dungeon, battleFrontier, catch_, gym } = {}) => {
+    toggle(true, 'update-toggles', '', ({ click, hatch, dungeon, pokerus, catch_, gym } = {}) => {
         toggleGym.checked = gym;
         toggleHatch.checked = hatch;
         toggleClick.checked = click;
         toggleCatch.checked = catch_;
         toggleDungeon.checked = dungeon;
-        toggleBattleFrontier.checked = battleFrontier;
+        togglePokerus.checked = pokerus;
     });
 };
 

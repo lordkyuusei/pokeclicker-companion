@@ -5,7 +5,7 @@ const CLICK = `${FEATURES}/clicking`;
 const CATCH = `${FEATURES}/catching`;
 const HATCH = `${FEATURES}/hatchery`;
 const DUNGEON = `${FEATURES}/dungeon`;
-const FRONTIER = `${FEATURES}/battle-frontier`;
+const POKERUS = `${FEATURES}/pokerus`;
 
 const mainID = 'toggleMainScript';
 
@@ -30,8 +30,8 @@ const undoGymID = 'undogymbattleScript';
 const gymsID = 'gathergymsScript';
 const undoGymsID = 'undogathergymsScript';
 
-const battleFrontierID = 'autobattlefrontierScript';
-const undoBattleFrontierID = 'undobattlefrontierScript';
+const pokerusID = 'autopokerusScript';
+const undoPokerusID = 'undopokerusScript';
 
 const mainURL = `${FEATURES}/${mainID}.js`;
 
@@ -56,8 +56,8 @@ const undoGymURL = `${GYMS}/${undoGymID}.js`;
 const gymsURL = `${GYMS}/${gymsID}.js`;
 const undoGymsURL = `${GYMS}/${undoGymsID}.js`;
 
-const battleFrontierURL = `${FRONTIER}/${battleFrontierID}.js`;
-const undoBattleFrontierURL = `${FRONTIER}/${undoBattleFrontierID}.js`;
+const pokerusURL = `${POKERUS}/${pokerusID}.js`;
+const undopokerusURL = `${POKERUS}/${undoPokerusID}.js`;
 
 /**
  * Utility injection & ejection scripts.
@@ -91,7 +91,7 @@ const getTogglesStates = () => {
     const click = document.getElementById(clickID);
     const hatch = document.getElementById(hatchID);
     const dungeon = document.getElementById(dungeonID);
-    const battleFrontier = document.getElementById(battleFrontierID);
+    const pokerus = document.getElementById(pokerusID);
     const catch_ = document.getElementById(catchID);
     const gym = document.getElementById(gymID);
 
@@ -99,7 +99,7 @@ const getTogglesStates = () => {
         click: click !== null,
         hatch: hatch !== null,
         dungeon: dungeon !== null,
-        battleFrontier: battleFrontier !== null,
+        pokerus: pokerus !== null,
         catch_: catch_ !== null,
         gym: gym !== null
     };
@@ -137,12 +137,12 @@ const toggleCatchOn = (params) => injectScript(catchURL, catchID, params);
 /**
  * Toggling Battle Frontier Reset.
  */
-const toggleBattleFrontierOff = () => {
+const togglePokerusOff = () => {
     ejectScript(battleFrontierID);
     injectScript(undoBattleFrontierURL, undoBattleFrontierID);
     return ejectScript(undoBattleFrontierID);
 }
-const toggleBattleFrontierOn = () => injectScript(battleFrontierURL, battleFrontierID);
+const togglePokerusOn = () => injectScript(pokerusURL, pokerusID);
 
 /**
  * Toggling Dungeon Runner. Set to Autoclicker Speed.
@@ -205,8 +205,8 @@ const mapMessageToFunction = {
     'toggle-catch-off': toggleCatchOff,
     'toggle-dungeon-on': toggleDungeonOn,
     'toggle-dungeon-off': toggleDungeonOff,
-    'toggle-battlefrontier-on': toggleBattleFrontierOn,
-    'toggle-battlefrontier-off': toggleBattleFrontierOff,
+    'toggle-pokerus-on': togglePokerusOn,
+    'toggle-pokerus-off': togglePokerusOff,
     'toggle-gym-on': toggleGymOn,
     'toggle-gym-off': toggleGymOff,
     'toggle-main-on': toggleMainOn,
