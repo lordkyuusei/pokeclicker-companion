@@ -1,29 +1,39 @@
 if (App.game && player && player.starter() !== GameConstants.Starter.None) {
     intervalMap.set('autopokerusInterval', setInterval(() => {
-        if (App.game.breeding.canAccess() && App.game.breeding.hasFreeEggSlot()) {
-            const starter = [...App.game.party.caughtPokemon]
-                .find(pokemon => pokemon.name === GameConstants.Starter[player.starter()]);
+        const SORT_DESC_ASC = true;
+        const SORT_BY_BREEDING_EFF = 6;
 
-            Settings.setSettingByName('hatcherySort', 6);
+        if (App.game.breeding.canAccess()) {
+            if (App.game.breeding.hasFreeEggSlot()) {
+                const hatchHelper = App.game.breeding.hatcheryHelpers.available()[0];
+                const pokemons = [...App.game.party.caughtPokemon];
+                const starter = pokemons.find(pokemon => pokemon.name === GameConstants.Starter[player.starter()]);
+                const breedable = pokemons
+                    .sort(PartyController.compareBy(SORT_BY_BREEDING_EFF, SORT_DESC_ASC))
+                    .filter(pokemon => pokemon.breeding === false && pokemon.level === 100 && pokemon.pokerus === false);
 
-            const breedable = [...App.game.party.caughtPokemon]
-                .sort(PartyController.compareBy(Settings.getSetting('hatcherySort').observableValue(), Settings.getSetting('hatcherySortDirection').observableValue()))
-                .filter(pokemon => pokemon.breeding === false && pokemon.level === 100 && pokemon.pokerus === false);
-
-            if (starter && breedable) {
-                if (starter.breeding === true) {
-                    App.game.breeding.addPokemonToHatchery(breedable[0]);
-                } else if (starter.breeding === false && starter.level === 100) {
-                    App.game.breeding.addPokemonToHatchery(starter);
+                if (starter && breedable) {
+                    if (starter.breeding === true) {
+                        App.game.breeding.addPokemonToHatchery(breedable[0]);
+                    } else if (starter.breeding === false) {
+                        if (starter.level === 100) {
+                            hatchHelper.hire();
+                            App.game.breeding.hatcheryHelpers.hatchery.gainPokemonEgg(starter, true);
+                            hatchHelper.charge();
+                            GameHelper.incrementObservable(hatchHelper.hatched, 1);
+                        } else {
+                            if (hatchHelper.hired()) {
+                                hatchHelper.fire();
+                            }
+                        }
+                    }
                 }
             }
-        } else {
-            App.game.breeding.eggList.forEach((eggFunc, i) => {
-                const egg = eggFunc();
-                if (egg.progress() >= 100) {
-                    App.game.breeding.hatchPokemonEgg(i);
-                }
-            })
+
+            App.game.breeding.eggList
+                .map((egg, i) => ({ egg, pos: i }))
+                .filter(egg => egg.egg().progress() >= 100)
+                .forEach(egg => App.game.breeding.hatchPokemonEgg(egg.pos));
         }
     }, 250));
 }
