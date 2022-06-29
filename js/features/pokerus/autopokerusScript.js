@@ -4,7 +4,7 @@ if (App.game && player && player.starter() !== GameConstants.Starter.None) {
             const starter = [...App.game.party.caughtPokemon]
                 .find(pokemon => pokemon.name === GameConstants.Starter[player.starter()]);
 
-            Settings.setSettingByName('hatcherySort', SortOptions[SortOptions['breedingEfficiency']]);
+            Settings.setSettingByName('hatcherySort', 6);
 
             const breedable = [...App.game.party.caughtPokemon]
                 .sort(PartyController.compareBy(Settings.getSetting('hatcherySort').observableValue(), Settings.getSetting('hatcherySortDirection').observableValue()))
