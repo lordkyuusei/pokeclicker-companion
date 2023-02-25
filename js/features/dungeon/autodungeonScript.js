@@ -5,10 +5,14 @@ if (App.game) {
         /* Resets the internal data to default */
         this.setupads = function () {
             this.direction = 1;
-            this.size = DungeonRunner.map.size;
+            this.floors = DungeonRunner.map.floorSizes;
+            this.floor = 0;
+            this.size = this.floors[this.floor];
             this.boss = { x: -1, y: -1 }
-            this.delay = 1000;
+            this.speed = 500 - (500 * (DungeonRunner.dungeon.difficultyRoute / 100))
         };
+
+        this.getFloorSize = () => this.floors[this.floor];
 
         this.nextPositions = {
             1: (x, y) => ({ x: x, y: y - 1 }),
@@ -18,9 +22,9 @@ if (App.game) {
         };
 
         /* Return board tile if coordinates are valid*/
-        this.getBoardTile = function (row, column) {
+        this.getBoardTile = function (row, column, floor = this.floor) {
             if (row < 0 || column < 0 || row >= this.size || column >= this.size) return null;
-            return DungeonRunner.map.board()[row][column];
+            return DungeonRunner.map.board()[floor][row][column];
         };
 
         /* Trigger direction change following loop 1 -> 2 -> 3 -> 4 -> 1 */
@@ -30,11 +34,10 @@ if (App.game) {
 
         /* If the boss appeared, we note its coordinate for further use (algo change?) */
         this.checkIfBossAppeared = function () {
-            const index = DungeonRunner.map.board().findIndex(row => row.find(tile => tile.type() === 4 && tile.isVisible === true));
+            const index = DungeonRunner.map.board()[this.floor].findIndex(row => row.find(tile => tile.type() === 4 && tile.isVisible === true));
             if (index >= 0) {
                 this.boss.x = index;
-                this.boss.y = DungeonRunner.map.board()[index].findIndex(tile => tile.type() === 4);
-                this.delay = 500;
+                this.boss.y = DungeonRunner.map.board()[this.floor][index].findIndex(tile => tile.type() === 4);
             }
         };
 
@@ -58,6 +61,14 @@ if (App.game) {
             this.move(Math.floor(this.size / 2), this.size - 1);
             this.direction = 4;
         };
+
+        /* If we found a ladder, handles it */
+
+        this.handleLadder = () => {
+            DungeonRunner.nextFloor();
+            this.floor += 1;
+            this.size = this.getFloorSize();
+        }
 
         /* If we found a boss, handles its fight */
         this.handleBoss = () => {
@@ -95,11 +106,12 @@ if (App.game) {
             if (tile === 2) this.handleEnemy();
             if (tile === 3) this.handleChest();
             if (tile === 4) this.handleBoss();
+            if (tile === 5) this.handleLadder();
         };
 
         /* Move the player in position ⬅️x➡️, ⬆️y⬇️ */
-        this.move = (x, y) => {
-            DungeonRunner.map.moveToCoordinates(x, y);
+        this.move = (x, y, f = this.floor) => {
+            DungeonRunner.map.moveToCoordinates(x, y, f);
         };
 
         /* Main dungeon crawling loop */
@@ -112,11 +124,11 @@ if (App.game) {
                     if (tile.isVisited === false) {
                         this.move(newX, newY);
                         this.handleNextTurn();
-                        await new Promise(resolve => setTimeout(resolve, 500));
+                        await new Promise(resolve => setTimeout(resolve, this.speed));
                     } else if (this.allAroundVisited(x, y)) {
                         this.goToFirstAvailable();
                         this.handleNextTurn();
-                        await new Promise(resolve => setTimeout(resolve, 500));
+                        await new Promise(resolve => setTimeout(resolve, this.speed));
                     } else if (tile.isVisited === true) {
                         this.toggleDirection();
                     }

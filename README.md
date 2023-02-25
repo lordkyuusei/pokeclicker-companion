@@ -8,7 +8,7 @@ Une extension chrome / edge / équivalent (pas firefox désolé p-e un jour qui 
 > Triable par caractéristique et par région. On ne remplit pas la file d'attente puisqu'elle perd tout son intérêt, vu que c'est automatisé.
 
 ➡️ Autodungeon - Permet de compléter automatiquement les donjons.
-> L'algorithme est "bête" mais consistant, il est surtout utile pour farmer les quêtes et les achievements.
+> L'algorithme est "bête" mais consistant, il est surtout utile pour farmer les quêtes et les achievements. Plus vous êtes loin dans l'aventure, plus il est rapide !
 
 ➡️ Autobattlefrontier - Permet de relancer automatiquement la zone de combat quand elle est terminée.
 > Voilà, c'est tout.
