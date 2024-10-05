@@ -1,7 +1,7 @@
 import toggle from './messages/toggle.js';
 import translateApp from './ui/texts/i18n.js';
 import makeLinksClickable from './ui/texts/links.js';
-import manifest from '../manifest.json' assert { type: "json" };
+import manifest from '../manifest.json' with { type: "json" };
 
 import { toggleCatch } from './ui/catching/index.js';
 import { toggleClick } from './ui/clicking/index.js';
@@ -51,6 +51,7 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
 translateApp();
 updateVersion();
 makeLinksClickable();
+console.log('allo')
 
 chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
     const { url } = tabs[0] || {};

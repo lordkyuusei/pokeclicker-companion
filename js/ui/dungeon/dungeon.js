@@ -1,4 +1,4 @@
-import options from './options.json' assert { type: "json" };
+import options from './options.json' with { type: "json" };
 
 export const feedDungeonRunsSelect = (select) => {
     const uiOptions = options.map(option => {

@@ -1,4 +1,4 @@
-import options from "./options.json" assert { type: "json" };
+import options from "./options.json" with { type: "json" };
 
 export default (select) => {
     const uiOptions = options.map(option => {

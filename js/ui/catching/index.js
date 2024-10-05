@@ -1,5 +1,5 @@
-import balls from './balls.json' assert { type: "json" };
-import options from './options.json' assert { type: "json" };
+import balls from './balls.json' with { type: "json" };
+import options from './options.json' with { type: "json" };
 
 import toggle from '../../messages/toggle.js'
 import feedCatchSelect from './catch.js'

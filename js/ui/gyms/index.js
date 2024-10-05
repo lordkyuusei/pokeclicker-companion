@@ -1,4 +1,4 @@
-import options from './options.json' assert { type: "json" };
+import options from './options.json' with { type: "json" };
 import toggle from '../../messages/toggle.js';
 import { feedGymSelect, feedGymRunsSelect } from './gyms.js';
 import defaultCallback from '../common/index.js'
