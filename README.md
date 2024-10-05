@@ -29,10 +29,10 @@ Une extension chrome / edge / équivalent (pas firefox désolé p-e un jour qui 
 # Installation
 ## Extension 
 ### Chrome
-Vous pouvez télécharger l'extension en cliquant [ici](https://chrome.google.com/webstore/detail/pokeclicker-companion/megnhoifgnbkfomlbjjjcmjhiiaoiadn?hl=fr&authuser=0) (version publiée : 1.2.3 (1.2.5 arrive soon))
+Vous pouvez télécharger l'extension en cliquant [ici](https://chrome.google.com/webstore/detail/pokeclicker-companion/megnhoifgnbkfomlbjjjcmjhiiaoiadn?hl=fr&authuser=0) (version publiée : 1.3.1)
 
 ### Edge
-Vous pouvez télécharger l'extension en cliquant [ici](https://microsoftedge.microsoft.com/addons/detail/pokeclicker-companion/nbbeacjccocdhaaakaoegppdabcmehbb) (version publiée : 1.2.0)
+Vous pouvez télécharger l'extension en cliquant [ici](https://microsoftedge.microsoft.com/addons/detail/pokeclicker-companion/nbbeacjccocdhaaakaoegppdabcmehbb) (version publiée : 1.3.1)
 
 ## Manuellement
 - cloner le repo (le gros bouton vert 'code' en haut de page => cloner ou via zip si vous êtes pas du milieu)
